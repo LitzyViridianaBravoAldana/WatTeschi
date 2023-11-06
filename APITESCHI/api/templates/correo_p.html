@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperación de Contraseña</title>
+</head>
+<body>
+    <p>Hola {{ username }},</p>
+    <p>Recibiste este correo porque solicitaste restablecer tu contraseña en nuestro sitio.</p>
+    <p>Tu nueva contraseña es: <strong>{{ new_password }}</strong></p>
+    <!--<p>Por razones de seguridad, te recomendamos cambiar esta contraseña tan pronto como inicies sesión.</p>-->
+    <p>Si no solicitaste este restablecimiento, puedes ignorar este correo electrónico.</p>
+    <p>Gracias,</p>
+    <p>El equipo de [Tu Sitio]</p>
+</body>
+</html>
+

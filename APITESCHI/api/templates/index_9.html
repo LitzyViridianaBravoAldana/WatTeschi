@@ -1,0 +1,466 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from wizixo.webestica.com/index-9.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Sep 2023 01:12:53 GMT -->
+<head>
+	<title>Wizixo | Creative Multipurpose Bootstrap Template</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Creative Multipurpose Bootstrap Template">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico'%}">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900%7CPlayfair+Display:400,400i,700,700i%7CRoboto:400,400i,500,700" rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/font-awesome/css/all.min.css'%}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/themify-icons/css/themify-icons.css'%}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.min.css'%}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/glightbox/css/glightbox.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/tiny-slider/tiny-slider.css'%}">
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/aos/aos.css'%}">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+	
+</head>
+
+<body>
+	<div class="preloader">
+		<img src="{% static 'images/preloader.svg'%}" alt="Pre-loader">
+	</div>
+
+	<!-- =======================
+	header Start-->
+	<header class="navbar-transparent navbar-dark">
+		<!-- Search -->
+		<div class="top-search collapse bg-light" id="search-open" data-bs-parent="#search">
+			<div class="container">
+				<div class="row position-relative">
+					<div class="col-md-8 mx-auto py-5">
+						<form>
+							<div class="input-group">
+								<input class="form-control rounded-start border-end-0 mb-0" type="text" name="search" placeholder="What are you looking for?">
+								<button type="button" class="btn btn-grad m-0">Search</button>
+							</div>
+						</form>
+						<p class="small mt-2 mb-0"><strong>e.g.</strong>Template, Wizixo, WordPress theme </p>
+					</div>
+					<a class="position-absolute top-0 end-0 mt-3 me-3 text-end" data-bs-toggle="collapse" href="#search-open"><i class="fa fa-window-close"></i></a>
+				</div>
+			</div>
+		</div>
+		<!-- End Search -->
+
+		<!-- Logo Nav Start -->
+		<nav class="navbar navbar-expand-lg">
+			<div class="container-fluid">
+				<!-- Logo -->
+				<a class="navbar-brand" href="{% url 'index_9'%}">
+					<img class="navbar-brand-item" src="{% static 'images/logo-white.svg'%}" alt="Wizixo">
+				</a>
+				<!-- Menu opener button -->
+				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- Main Menu Start -->
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav navbar-nav-scroll navbar-nav-scroll ms-auto">
+						<!-- Menu item 1 Demos-->
+						<li class="nav-item dropdown">
+							<a class="nav-link active dropdown-toggle" href="#" id="demosMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Genero</a>
+							<div class="dropdown-menu pb-3 pb-lg-0" aria-labelledby="demosMenu" >
+								<div class="d-block d-sm-flex">
+									<ul class="list-unstyled w-100 w-sm-50 pe-0 pe-lg-5">
+										<!--<li class="dropdown-header">Business Homepages</li> -->
+										<li> <a class="dropdown-item" href="{% url 'genero1'%}">Terror</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero2'%}">Ficción</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero3'%}">Aventura</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero4'%}">Romance</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero5'%}">Drama</a> </li>
+									</ul>
+									<ul class="list-unstyled w-100 w-sm-50 pe-0 pe-lg-5">
+										<!--<li class="dropdown-header mt-3 mt-sm-0">Classic Homepages</li> -->
+										<li> <a class="dropdown-item" href="{% url 'genero6'%}">Novela</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero7'%}">Cuentos</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero8'%}">Poesia</a> </li>
+										<li> <a class="dropdown-item active" href="{% url 'genero9'%}">Fantasia</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero10'%}">Misterio</a> </li>
+									</ul>
+								</div>
+								<!-- mega menu Bottom 
+								
+								<div class="w-100 bg-grad pattern-overlay-2 p-4 mt-3 all-text-white d-none d-lg-flex">
+									<div class="align-self-center me-4">
+										<h4 class="mb-0">Checkout the doc!</h4>
+										<p class="mb-0 small">For better understanding of theme standard</p>
+									</div>
+									<a href="documentation/index.html" target="_blank" class="btn btn-outline-white btn-sm mb-0 align-self-center ms-auto">Read more!</a>
+								</div>
+							</div>
+						</li>
+								-->
+								
+						<!-- Menu item 2 Blog-->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="blogMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Editorial</a>
+							<ul class="dropdown-menu" aria-labelledby="blogMenu">
+								<li><a class="dropdown-item" href="{% url 'editorial1'%}">Editorial 1</a></li>
+								<li><a class="dropdown-item" href="{% url 'editorial2'%}">Editorial 2</a></li>
+								<li><a class="dropdown-item" href="{% url 'editorial3'%}">Editorial 3</a></li>
+								<li><a class="dropdown-item" href="{% url 'editorial4'%}">Editorial 4</a></li>
+							</ul>
+						</li>
+						<!-- Menu item 3 Pages-->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Autores</a>
+							<ul class="dropdown-menu" aria-labelledby="pagesMenu">
+								<li> <a class="dropdown-item" href="{% url 'team'%}">Todos los Autores</a> </li>
+			
+							</ul>
+						</li>
+						<!-- Menu item 4 Portfolio-->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="portfolioMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Biblioteca</a>
+							<ul class="dropdown-menu" aria-labelledby="portfolioMenu">
+								<li> <a class="dropdown-item" href="{% url 'biblioteca'%}">Ir a mi Biblioteca</a> </li>
+							</ul>
+						</li>
+						<!-- Menu item 5 Elements-->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="portfolioMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+							<ul class="dropdown-menu" aria-labelledby="portfolioMenu">
+								<li> <a class="dropdown-item" href="{% url 'sign_in'%}">Ingresar</a> </li>
+								<li> <a class="dropdown-item" href="{% url 'sign_up'%}">Registrar</a> </li>
+							</ul>
+						</li>
+						<!-- Menu item 6 Elements-->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="portfolioMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TABLA</a>
+							<ul class="dropdown-menu" aria-labelledby="portfolioMenu">
+								<li> <a class="dropdown-item" href="{% url 'favoritos'%}">tabla</a> </li>
+							</ul>
+						</li>
+
+						<!-- pruebaaaaa-->
+
+
+						<!-- Menu item 6 Elements-->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="portfolioMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GRAFICAS</a>
+							<ul class="dropdown-menu" aria-labelledby="portfolioMenu">
+								<li> <a class="dropdown-item" href="{% url 'graficas'%}">Graficas</a> </li>
+							</ul>
+						</li>
+
+						<!-- pruebaaaaa-->
+
+						<!-- Menu item 6 Docs-->
+						
+					</ul>
+				</div>
+				<!-- Main Menu End -->
+				<!-- Header Extras Start-->
+				<div class="navbar-nav">
+					<!-- extra item Search-->
+					<div class="nav-item search border-0 ps-3 pe-0 px-lg-2" id="search">
+						<a class="nav-link" data-bs-toggle="collapse" href="#search-open"><i class="ti-search"> </i></a>
+					</div>
+					<!-- extra item Btn-->
+					<div class="nav-item border-0 d-none d-lg-inline-block align-self-center">
+						<a href="{% url 'favoritos'%}" class=" btn btn-sm btn-grad text-white mb-0">Favoritos!</a>
+					</div>
+				</div>
+				<!-- Header Extras End-->
+			</div>
+		</nav>
+		<!-- Logo Nav End -->
+	</header>
+	<!-- =======================
+	header End-->
+
+	<!-- =======================
+	Main Banner -->
+	<section class="p-0">
+		<div class="tiny-slider arrow-dark arrow-large arrow-transparent arrow-hover">
+			<div class="tiny-slider-inner h-700 h-lg-900" data-autoplay="true" data-autoplaytime="7000" data-gutter="0" data-arrow="true" data-dots="false" data-items="1">
+				<!-- slide 1-->
+				<div class="bg-overlay-dark-3 h-100" style="background-image:url '{% static 'images/banner/06.jpg' %}'; background-position: center center; background-size: cover;">
+					<div class="container h-100">
+						<div class="row d-flex h-100">
+							<div class="col-md-8 col-lg-6 me-auto slider-content justify-content-center align-self-center align-items-start text-start">
+								<h2 class="animate__animated animate__fadeInUp animate__delay-1s text-white fw-bold display-2">Wizixo Freelancers </h2>
+								<p class="animate__animated animate__fadeInUp animate__delay-2s lead text-white alt-font fst-italic d-none d-lg-block">We aim to achieve the goal as we provide innovative ideas, designs, and multimedia solutions to our clients. </p>
+								<form class="animate__animated animate__fadeInUp animate__delay-3s bg-white my-2 my-md-4 p-2 w-100 rounded shadow">
+									<div class="input-group">
+										<input class="form-control rounded-end border-0 mb-0" type="text" name="search" placeholder="Enter job title, skills, position...">
+										<button type="button" class="btn btn-grad m-0 rounded">
+											<span class="d-none d-md-block">Search</span>
+											<span class="d-md-none"><i class="fa fa-search m-0"></i></span>
+										</button>
+									</div>
+								</form>
+								<p class="animate__animated animate__fadeInUp animate__delay-4s mt-3 lead text-white">We help our customers better manage their web presence in order to achieve greater <a href="#" class="fw-bold"> success online.</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- slide 2-->
+				<div class="bg-overlay-dark-3 h-100" style="background-image:url(images/banner/07.jpg); background-position: center center; background-size: cover;">
+					<div class="container h-100">
+						<div class="row d-flex h-100">
+							<div class="col-lg-7 justify-content-center align-self-center mx-auto slider-content text-center">
+								<h2 class="animate__animated animate__fadeInUp animate__delay-1s dealy-500 text-white fw-bold display-2">Bringing the art to the cart</h2>
+								<p class="animate__animated animate__fadeInUp animate__delay-2s lead text-white alt-font fst-italic d-none d-md-block">It can be the packaging of an item or the design of its website and Applications. Creative alternative solutions.</p>
+								<div class="animate__animated animate__fadeInUp mt-3 dealy-1500">
+									<a href="#" class="btn btn-grad">Purchase Now!</a>
+									<a href="#" class="btn btn-link text-white">Check live demo!</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- =======================
+	Main banner -->
+
+	<!-- =======================
+	welcome -->
+	<section class="pt-5">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7">
+					<div class="mb-lg-n8 mb-0">
+						<img src="{% static 'images/mockups/fly-screen.png'%}" alt="">
+					</div>
+				</div>
+				<div class="col-md-5 mt-5">
+					<h2 class="h1">Get it done with a Wizixo</h2>
+					<p class="lead">Partnering with 500+ Fortune companies and mid-sized firms across enterprises, uniquely customized and <abbr title="title">scalable workforce solutions.</abbr></p>
+					<p>There is nothing that can stop you from achieving what you want, except yourself. If you devote yourself to it you will achieve your goal.</p>
+					<div>
+						<a href="#" class="btn btn-grad">Post your job</a>
+						<a href="#" class="btn btn-link">View job list</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- =======================
+	welcome -->
+
+	<!-- =======================
+	service -->
+	<section class="bg-dark">
+		<div class="container">
+			<div class="row justify-content-between align-items-center">
+				<div class="col-sm-2">
+					<h5 class="text-white">Trusted by 5M+ businesses.</h5>
+				</div>
+				<div class="col-sm-10">
+					<div class="tiny-slider">
+						<div class="tiny-slider-inner arrow-hover arrow-dark" data-arrow="false" data-dots="false" data-items-xl="6" data-items-lg="5" data-items-md="4" data-items-sm="3" data-items-xs="2" data-autoplay="4500">
+							<div class="item"><img class="w-75 mx-auto" src="{% static 'images/clients/01.png' %}" alt=""></div>
+							<div class="item"><img class="w-75 mx-auto" src="{% static 'images/clients/02.png' %}" alt=""></div>
+							<div class="item"><img class="w-75 mx-auto" src="{% static 'images/clients/04.png' %}" alt=""></div>
+							<div class="item"><img class="w-75 mx-auto" src="{% static 'images/clients/05.png' %}" alt=""></div>
+							<div class="item"><img class="w-75 mx-auto" src="{% static 'images/clients/06.png' %}" alt=""></div>
+							<div class="item"><img class="w-75 mx-auto" src="{% static 'images/clients/07.png' %}" alt=""></div>
+							<div class="item"><img class="w-75 mx-auto" src="{% static 'images/clients/08.png' %}" alt=""></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-4 text-center">
+				<div class="col-sm-12">
+					<h2 class="text-white text-center mt-5 mb-3">Browse 2M+ Professional Services to Get Your Job Done</h2>
+				</div>
+				<!-- service item -->
+				<div class="col-sm-6 col-lg-3 mt-30">
+					<div class="feature-box bg-white shadow-hover rounded f-style-5 h-100 icon-grad">
+						<div class="feature-box-icon"><i class="ti-panel"></i></div>
+						<h3 class="feature-box-title">Programmers & Developers</h3>
+						<p class="feature-box-desc">We help our customers better manage their web presence.</p>
+					</div>
+				</div>
+				<!-- service item -->
+				<div class="col-sm-6 col-lg-3 mt-30">
+					<div class="feature-box bg-white shadow-hover rounded f-style-5 h-100 icon-grad">
+						<div class="feature-box-icon"><i class="ti-ruler-pencil"></i></div>
+						<h3 class="feature-box-title">Designers & Artists</h3>
+						<p class="feature-box-desc">We provide digital transformation solutions to make their visions reality.</p>
+					</div>
+				</div>
+				<!-- service item -->
+				<div class="col-sm-6 col-lg-3 mt-30">
+					<div class="feature-box bg-white shadow-hover rounded f-style-5 h-100 icon-grad">
+						<div class="feature-box-icon"><i class="ti-write"></i></div>
+						<h3 class="feature-box-title">Writers & Translators</h3>
+						<p class="feature-box-desc">We are an innovative Internet marketing solutions company that offers web development</p>
+					</div>
+				</div>
+				<!-- service item -->
+				<div class="col-sm-6 col-lg-3 mt-30">
+					<div class="feature-box bg-white shadow-hover rounded f-style-5 h-100 icon-grad">
+						<div class="feature-box-icon"><i class="ti-announcement"></i></div>
+						<h3 class="feature-box-title">Sales & Marketing </h3>
+						<p class="feature-box-desc">With us at your side, you will find the IT solution to achieve your financial goals. </p>
+					</div>
+				</div>
+				<!-- service item -->
+				<div class="col-sm-6 col-lg-3 mt-30">
+					<div class="feature-box bg-white shadow-hover rounded f-style-5 h-100 icon-grad">
+						<div class="feature-box-icon"><i class="ti-home"></i></div>
+						<h3 class="feature-box-title">Engineers & Architects</h3>
+						<p class="feature-box-desc">SEO strategies and various other types of Internet marketing related services</p>
+					</div>
+				</div>
+				<!-- service item -->
+				<div class="col-sm-6 col-lg-3 mt-30">
+					<div class="feature-box bg-white shadow-hover rounded f-style-5 h-100 icon-grad">
+						<div class="feature-box-icon"><i class="ti-crown"></i></div>
+						<h3 class="feature-box-title">Admins & Secretaries</h3>
+						<p class="feature-box-desc">We provide digital transformation solutions, enabling companies to make their visions reality.</p>
+					</div>
+				</div>
+				<!-- service item -->
+				<div class="col-sm-6 col-lg-3 mt-30">
+					<div class="feature-box bg-white shadow-hover rounded f-style-5 h-100 icon-grad">
+						<div class="feature-box-icon"><i class="ti-wallet"></i></div>
+						<h3 class="feature-box-title">Business & Finance</h3>
+						<p class="feature-box-desc">SEO strategies and various other types of Internet marketing related services</p>
+					</div>
+				</div>
+				<!-- service item -->
+				<div class="col-sm-6 col-lg-3 mt-30">
+					<div class="feature-box bg-white shadow-hover rounded f-style-5 h-100 icon-grad">
+						<div class="feature-box-icon"><i class="ti-zoom-in"></i></div>
+						<h3 class="feature-box-title">Lawyers & Investigators</h3>
+						<p class="feature-box-desc">We provide digital transformation solutions, enabling companies to make their visions reality.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 mt-2 mt-md-4">
+					<div class="text-center">
+						<a class="btn btn-outline-white mt-4" href="#!">See All Freelancer Skills</a>
+						<small class="d-block mt-2">Gain Access to a Network of Top Industry Experts</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- =======================
+	service -->
+
+
+	<!-- =======================
+	info -->
+	<section class="pb-3">
+		<div class="container">
+			<div class="row">
+				<!-- image -->
+				<div class="col-md-6 col-lg-8">
+					<img src="{% static 'images/mockups/01.png'%}" alt="">
+				</div>
+				<!-- info -->
+				<div class="col-md-6 col-lg-4 align-self-center">
+					<h6 class="bg-grad p-2 rounded d-inline-block text-white">Trusted Experts</h6>
+					<h2>Trust our experts to help grow your business.</h2>
+					<p>Placing assured be if removed it besides on. Far shed each high read are men over day. Afraid we praise lively he suffer family estate is. Ample order up in of in ready. Timed blind had now those ought set often which. Or snug dull he show more true wish. No at many deny away miss evil. On in so indeed spirit an mother. </p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- =======================
+	info -->
+
+
+	<!-- =======================
+	footer  -->
+	<footer class="footer bg-light pt-6">
+		<div class="footer-content pb-3">
+			<div class="container">
+				<div class="row">
+					<!-- Footer widget 1 -->
+					<div class="col-md-4">
+						<div class="widget">
+							<a href="{% url 'index_9'%}" class="footer-logo">
+								<!-- footer logo Start -->
+								<img class="footer-logo-item" src="{% static 'images/logo.svg'%}" alt="">
+								<!-- footer logo End -->
+							</a>
+							<p class="mt-3">Wizixo is a highly creative, modern, visually stunning and Bootstrap 5 Creative Multi-purpose corporate and portfolio HTML5 template.</p>
+							<p>It is based on the powerful Bootstrap 5 Framework to make sure an entirely responsive layout. </p>
+						</div>
+					</div>
+					<!-- Footer widget 2 -->
+					<div class="col-md-3 col-sm-6">
+						<div class="widget address" style="background-image: url('images/world-map.png'); background-position: 50% 20px; background-repeat: no-repeat; background-size: contain;">
+							<ul class="list-group list-group-borderless">
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-map-alt"></i>1421 Coburn Hollow Road Metamora, Near Center Point, IL 61548. </li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-headphone-alt"></i> (251) 854-6308 </li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-email"></i> help@wizixo.com</li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-time"></i>
+									<p>Mon - Fri: <strong>09:00 - 21:00</strong> <br>Sat & Sun: <strong>Closed</strong></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- Footer widget 3 -->
+					<div class="col-md-2 col-sm-6">
+						<div class="widget">
+							<h6>Quick LInks</h6>
+							<ul class="nav flex-column primary-hover">
+								<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'index_9'%}">Home</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Footer widget 4 -->
+					<div class="col-md-3">
+						<div class="widget bg-grad p-4 all-text-white rounded">
+							<i class="ti-email newsletter-icon"></i>
+							<p class="mb-2">Subscribe to our newsletter to receive exclusive offers.</p>
+							<div class="form-group mb-0">
+								<input class="form-control border-white mb-3" type="email" placeholder="Enter email...">
+								<button class="btn btn-dark mb-0">Join us</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="divider mt-3"></div>
+		<!--footer copyright -->
+	<!-- =======================
+	footer  -->
+
+	<!-- Back to top -->
+	<div> <a href="#" class="back-top btn btn-grad"><i class="ti-angle-up"></i></a> </div>
+
+	<!-- Bootstrap JS -->
+	<script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+
+	<!--All plugins-->
+	<script src="{% static 'vendor/glightbox/js/glightbox.js'%}"></script>
+	<script src="{% static 'vendor/tiny-slider/tiny-slider.js'%}"></script>
+	<script src="{% static 'vendor/aos/aos.js'%}"></script>
+
+	<!--Template Functions-->
+	<script src="{% static 'js/functions.js'%}"></script>
+
+</body>
+
+<!-- Mirrored from wizixo.webestica.com/index-9.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Sep 2023 01:12:54 GMT -->
+</html>

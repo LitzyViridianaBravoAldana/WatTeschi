@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla con Descarga a Excel</title>
+</head>
+
+<body>
+
+    <h2>Tabla de Ejemplo</h2>
+
+    <label for="searchInput">Buscar:</label>
+    <input type="text" id="searchInput" oninput="searchTable()" placeholder="Ingrese término de búsqueda">
+
+    <table border="1" id="miTabla">
+        <!-- Encabezados de la tabla -->
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Pais</th>
+                <th>Correo Electrónico</th>
+                <th>Teléfono</th>
+                <th>Ciudad</th>
+            </tr>
+        </thead>
+        <!-- Contenido de la tabla -->
+        <tbody>
+            <tr>
+                <td>Juan</td>
+                <td>25</td>
+                <td>Mexico</td>
+                <td>juan@example.com</td>
+                <td>123-456-7890</td>
+                <td>Ciudad de México</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>30</td>
+                <td>Argentina</td>
+                <td>maria@example.com</td>
+                <td>987-654-3210</td>
+                <td>Buenos Aires</td>
+            </tr>
+            <tr>
+                <td>Carlos</td>
+                <td>22</td>
+                <td>Colombia</td>
+                <td>carlos@example.com</td>
+                <td>555-123-4567</td>
+                <td>Bogotá</td>
+            </tr>
+            <!-- Agregar más registros similares -->
+            <tr>
+                <td>Laura</td>
+                <td>28</td>
+                <td>Mexico</td>
+                <td>laura@example.com</td>
+                <td>333-444-5555</td>
+                <td>Ciudad de México</td>
+            </tr>
+            <tr>
+                <td>Miguel</td>
+                <td>35</td>
+                <td>Argentina</td>
+                <td>miguel@example.com</td>
+                <td>222-111-9999</td>
+                <td>Buenos Aires</td>
+            </tr>
+            <!-- Agregar más registros únicos -->
+            <tr>
+                <td>Ana</td>
+                <td>26</td>
+                <td>Brasil</td>
+                <td>ana@example.com</td>
+                <td>777-888-0000</td>
+                <td>Rio de Janeiro</td>
+            </tr>
+            <tr>
+                <td>Litzy</td>
+                <td>26</td>
+                <td>Brasil</td>
+                <td>455@example.com</td>
+                <td>777-888-0000</td>
+                <td>Rio de Janeiro</td>
+            </tr>            <tr>
+                <td>Elizabeth</td>
+                <td>26</td>
+                <td>Brasil</td>
+                <td>112233@example.com</td>
+                <td>777-888-0000</td>
+                <td>Rio de Janeiro</td>
+            </tr>            <tr>
+                <td>Estela</td>
+                <td>26</td>
+                <td>Brasil</td>
+                <td>123@example.com</td>
+                <td>777-888-0000</td>
+                <td>Rio de Janeiro</td>
+            </tr>
+            <!-- Agregar más registros similares o únicos según sea necesario -->
+        </tbody>
+    </table>
+
+    <button onclick="exportToExcel('miTabla', 'TablaExcel')">Descargar Excel</button>
+
+    <div class="custom-control custom-checkbox me-sm-2 mb-4 d-flex">
+        <label class="form-check-label ms-2" for="exampleCheck1"><a href="{% url 'index_9'%}">Regresar al Menu</a></label>
+    </div>
+
+    <script>
+        function searchTable() {
+            var input, filter, table, tr, td, i, j, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("miTabla");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 0; i < tr.length; i++) {
+                var found = false;
+                for (j = 0; j < tr[i].cells.length; j++) {
+                    td = tr[i].cells[j];
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (found) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+
+
+        function exportToExcel(tableID, filename = '') {
+            var downloadLink;
+            var dataType = 'application/vnd.ms-excel';
+            var tableSelect = document.getElementById(tableID);
+            var tableHTML = '';
+
+            var visibleRows = tableSelect.querySelectorAll('tr:not([style*="display: none"])');
+
+            // Construir una tabla HTML con los datos visibles
+            for (var i = 0; i < visibleRows.length; i++) {
+                var cells = visibleRows[i].getElementsByTagName('td');
+                var rowHTML = '<tr>';
+                for (var j = 0; j < cells.length; j++) {
+                    rowHTML += '<td>' + cells[j].innerText + '</td>';
+                }
+                rowHTML += '</tr>';
+                tableHTML += rowHTML;
+            }
+
+            // Crear un enlace de descarga
+            downloadLink = document.createElement("a");
+            document.body.appendChild(downloadLink);
+
+            // Convertir la tabla HTML a datos de Blob
+            var blob = new Blob(['\ufeff', '<table border="1">' + tableHTML + '</table>'], {
+                type: dataType
+            });
+
+            // Crear una URL para el Blob
+            var url = URL.createObjectURL(blob);
+
+            // Establecer atributos para el enlace de descarga
+            downloadLink.href = url;
+            downloadLink.download = filename + '.xls';
+
+            // Simular clic en el enlace de descarga
+            downloadLink.click();
+        }
+    </script>
+
+</body>
+
+</html>

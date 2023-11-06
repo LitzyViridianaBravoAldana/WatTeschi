@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficas</title>
+    <!-- Incluye Chart.js desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="custom-control custom-checkbox me-sm-2 mb-4 d-flex">
+        <label class="form-check-label ms-2" for="exampleCheck1"><a href="{% url 'index_9'%}">Regresar al Menu</a></label>
+    </div>
+
+<!-- Contenedor para la gráfica de pastel -->
+<div style="width: 50%; float: left;">
+    <canvas id="graficaPastel"></canvas>
+</div>
+
+<!-- Contenedor para la gráfica de barras -->
+<div style="width: 50%; float: left;">
+    <canvas id="graficaBarras"></canvas>
+</div>
+
+<script>
+    // Datos para las gráficas
+    var datosPastel = {
+        labels: ['Etiqueta 1', 'Etiqueta 2', 'Etiqueta 3'],
+        datasets: [{
+            data: [30, 50, 20],
+            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+        }]
+    };
+
+
+
+    var datosBarras = {
+        labels: ['Etiqueta A', 'Etiqueta B', 'Etiqueta C'],
+        datasets: [{
+            label: 'Datos de ejemplo',
+            data: [12, 19, 3],
+            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+            borderColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+            borderWidth: 1
+        }]
+    };
+
+    // Configuración de opciones comunes
+    var opcionesComunes = {
+        responsive: true,
+        maintainAspectRatio: false
+    };
+
+    // Configuración de la gráfica de pastel
+    var configPastel = {
+        type: 'pie',
+        data: datosPastel,
+        options: opcionesComunes
+    };
+
+    // Configuración de la gráfica de barras
+    var configBarras = {
+        type: 'bar',
+        data: datosBarras,
+        options: opcionesComunes
+    };
+
+    // Obtén el contexto de los elementos canvas
+    var ctxPastel = document.getElementById('graficaPastel').getContext('2d');
+    var ctxBarras = document.getElementById('graficaBarras').getContext('2d');
+
+    // Crea las gráficas
+    new Chart(ctxPastel, configPastel);
+    new Chart(ctxBarras, configBarras);
+</script>
+
+</body>
+</html>

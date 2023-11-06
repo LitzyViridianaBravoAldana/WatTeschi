@@ -1,0 +1,582 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from wizixo.webestica.com/blog-grid-column-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Sep 2023 01:13:00 GMT -->
+    <!-- Incluye Chart.js desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<head>
+	<title>Wizixo | Creative Multipurpose Bootstrap Template</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Webestica.com">
+	<meta name="description" content="Creative Multipurpose Bootstrap Template">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico'%}">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900%7CPlayfair+Display:400,400i,700,700i%7CRoboto:400,400i,500,700" rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/font-awesome/css/all.min.css'%}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/themify-icons/css/themify-icons.css'%}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.min.css'%}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/tiny-slider/tiny-slider.css'%}">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+
+</head>
+
+<body>
+	<div class="preloader">
+		<img src="{% static 'images/preloader.svg'%}" alt="Pre-loader">
+	</div>
+
+	<!-- =======================
+	header Start-->
+	<header class="header-static navbar-sticky navbar-light">
+		<!-- Search -->
+		<div class="top-search collapse bg-light" id="search-open" data-bs-parent="#search">
+			<div class="container">
+				<div class="row position-relative">
+					<div class="col-md-8 mx-auto py-5">
+						<form>
+							<div class="input-group">
+								<input class="form-control rounded-start border-end-0 mb-0" type="text" name="search" autofocus placeholder="What are you looking for?">
+								<button type="button" class="btn btn-grad m-0">Search</button>
+							</div>
+						</form>
+						<p class="small mt-2 mb-0"><strong>e.g.</strong>Template, Wizixo, WordPress theme </p>
+					</div>
+					<a class="position-absolute top-0 end-0 mt-3 me-3 text-end" data-bs-toggle="collapse" href="#search-open"><i class="fa fa-window-close"></i></a>
+				</div>
+			</div>
+		</div>
+		<!-- End Search -->
+
+		<!-- Navbar top start-->
+		<!-- Navbar top End-->
+
+		<!-- Logo Nav Start -->
+		<nav class="navbar navbar-expand-lg">
+			<div class="container">
+				<!-- Logo -->
+				<a class="navbar-brand" href="{% url 'index_9'%}">
+					<!-- Logo -->
+					<img class="navbar-brand-item" src="{% static 'images/logo.svg'%}" alt="Logo">
+				</a>
+				<!-- Menu opener button -->
+				<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- Main Menu Start -->
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav navbar-nav-scroll navbar-nav-scroll ms-auto">
+						<!-- Menu item 1 Demos-->
+						<li class="nav-item dropdown">
+							<a class="nav-link active dropdown-toggle" href="#" id="demosMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Genero</a>
+							<div class="dropdown-menu pb-3 pb-lg-0" aria-labelledby="demosMenu" >
+								<div class="d-block d-sm-flex">
+									<ul class="list-unstyled w-100 w-sm-50 pe-0 pe-lg-5">
+										<!--<li class="dropdown-header">Business Homepages</li> -->
+										<li> <a class="dropdown-item" href="{% url 'genero1'%}">Terror</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero2'%}">Ficción</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero3'%}">Aventura</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero4'%}">Romance</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero5'%}">Drama</a> </li>
+									</ul>
+									<ul class="list-unstyled w-100 w-sm-50 pe-0 pe-lg-5">
+										<!--<li class="dropdown-header mt-3 mt-sm-0">Classic Homepages</li> -->
+										<li> <a class="dropdown-item" href="{% url 'genero6'%}">Novela</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero7'%}">Cuentos</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero8'%}">Poesia</a> </li>
+										<li> <a class="dropdown-item active" href="{% url 'genero9'%}">Fantasia</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'genero10'%}">Misterio</a> </li>
+									</ul>
+								</div>
+								<!-- mega menu Bottom 
+								
+								<div class="w-100 bg-grad pattern-overlay-2 p-4 mt-3 all-text-white d-none d-lg-flex">
+									<div class="align-self-center me-4">
+										<h4 class="mb-0">Checkout the doc!</h4>
+										<p class="mb-0 small">For better understanding of theme standard</p>
+									</div>
+									<a href="documentation/index.html" target="_blank" class="btn btn-outline-white btn-sm mb-0 align-self-center ms-auto">Read more!</a>
+								</div>
+							</div>
+						</li>
+								-->
+								
+						<!-- Menu item 2 Blog-->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="blogMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Editorial</a>
+							<ul class="dropdown-menu" aria-labelledby="blogMenu">
+								<li><a class="dropdown-item" href="{% url 'editorial1'%}">Editorial 1</a></li>
+								<li><a class="dropdown-item" href="{% url 'editorial2'%}">Editorial 2</a></li>
+								<li><a class="dropdown-item" href="{% url 'editorial3'%}">Editorial 3</a></li>
+								<li><a class="dropdown-item" href="{% url 'editorial4'%}">Editorial 4</a></li>
+							</ul>
+						</li>
+						<!-- Menu item 3 Pages-->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Autores</a>
+							<ul class="dropdown-menu" aria-labelledby="pagesMenu">
+								<li> <a class="dropdown-item" href="{% url 'team'%}">Todos los Autores</a> </li>
+			
+							</ul>
+						</li>
+						<!-- Menu item 4 Portfolio-->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="portfolioMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Biblioteca</a>
+							<ul class="dropdown-menu" aria-labelledby="portfolioMenu">
+								<li> <a class="dropdown-item" href="{% url 'biblioteca'%}">Ir a mi Biblioteca</a> </li>
+							</ul>
+						</li>
+						<!-- Menu item 5 Elements-->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="portfolioMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+							<ul class="dropdown-menu" aria-labelledby="portfolioMenu">
+								<li> <a class="dropdown-item" href="{% url 'sign_in'%}">Ingresar</a> </li>
+								<li> <a class="dropdown-item" href="{% url 'sign_up'%}">Registrar</a> </li>
+							</ul>
+						</li>
+				<!-- Main Menu End -->
+				<!-- Header Extras Start-->
+				<div class="navbar-nav">
+					<!-- extra item Search-->
+					<div class="nav-item search border-0 ps-3 pe-0 px-lg-2" id="search">
+						<a class="nav-link" data-bs-toggle="collapse" href="#search-open"><i class="ti-search"> </i></a>
+					</div>
+					<!-- extra item Btn-->
+					<div class="nav-item border-0 d-none d-lg-inline-block align-self-center">
+						<a href="#" class=" btn btn-sm btn-grad text-white mb-0">Favoritos!</a>
+					</div>
+				</div>
+				<!-- Header Extras End-->
+			</div>
+		</nav>
+		<!-- Logo Nav End -->
+	</header>
+	<!-- =======================
+	header End-->
+
+	<!-- =======================
+	Banner innerpage -->
+	<div class="text-center bg-overlay-dark-7 py-7" style="background:url( /images/bg/04.jpg) no-repeat; background-size:cover; background-position: center center;">
+		<div class="container">
+			<div class="row all-text-white">
+				<div class="col-md-12 align-self-center">
+					<h1 class="fw-bold">Blog Grid</h1>
+					<h6 class="mb-5">We transform your perception into an excellent website</h6>
+					<nav aria-label="breadcrumb">
+						<ol class="breadcrumb justify-content-center">
+							<li class="breadcrumb-item active"><a href="{% url 'index_9'%}"><i class="ti-home"></i> Home</a></li>
+							<li class="breadcrumb-item">Blog Grid</li>
+						</ol>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- =======================
+	Banner innerpage -->
+
+	<!-- =======================
+	blog -->
+	<section class="blog-page pb-0">
+		<div class="container">
+			<div class="row">
+				<table class="table">
+					<tbody>
+						<tr>
+							<!-- Post item with image 1 -->
+							<td> A
+								<canvas id="pregunta1"></canvas>
+							</td>
+	
+							<!-- Post item with image 2 -->
+							<td>B
+								<canvas id="pregunta2"></canvas>
+							</td>
+	
+							<!-- Post item with image 3 -->
+							<td>C
+								<canvas id="pregunta3"></canvas>
+							</td>
+						</tr>
+						<!-- SEGUNDA filA-->
+						<tr>
+							<!-- Post item with image 1 -->
+							<td>D
+								<canvas id="pregunta4"></canvas>
+								</div>
+							</td>
+	
+							<!-- Post item with image 2 -->
+							<td colspan="2">E F
+								<canvas id="pregunta5"></canvas>
+							</td>
+						</tr>
+						<!--tercera fila-->
+						<tr>
+							<!-- Post item with image 1 -->
+							<td>G
+								<canvas id="pregunta6"></canvas>
+							</td>
+	
+							<!-- Post item with image 2 -->
+							<td colspan="2"> H I
+								<canvas id="pregunta7"></canvas>
+							</td>
+	
+							
+						</tr>
+						<!--FIN DE LA TERCERA FILA-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	
+	<!-- =======================
+	blog -->
+
+
+	<!-- =======================
+	pagination -->
+	<section class="pt-0">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<nav>
+						<ul class="pagination justify-content-center">
+							<li class="page-item disabled"> <span class="page-link">Prev</span> </li>
+							<li class="page-item active"> <span class="page-link bg-grad"> 1 </span> </li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">3</a></li>
+							<li class="page-item"><a class="page-link" href="#">Next</a> </li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- =======================
+	pagination -->
+
+	<!-- =======================
+	footer  -->
+	<footer class="footer bg-light pt-6">
+		<div class="footer-content pb-3">
+			<div class="container">
+				<div class="row">
+					<!-- Footer widget 1 -->
+					<div class="col-md-4">
+						<div class="widget">
+							<a href="{% url 'index_9'%}" class="footer-logo">
+								<!-- footer logo Start -->
+								<img class="footer-logo-item" src="{% static 'images/logo.svg'%}" alt="">
+								<!-- footer logo End -->
+							</a>
+							<p class="mt-3">Wizixo is a highly creative, modern, visually stunning and Bootstrap 5 Creative Multi-purpose corporate and portfolio HTML5 template.</p>
+							<p>It is based on the powerful Bootstrap 5 Framework to make sure an entirely responsive layout. </p>
+						</div>
+					</div>
+					<!-- Footer widget 2 -->
+					<div class="col-md-3 col-sm-6">
+						<div class="widget address" style="background-image: url('assets/images/world-map.png'); background-position: 50% 20px; background-repeat: no-repeat; background-size: contain;">
+							<ul class="list-group list-group-borderless">
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-map-alt"></i>1421 Coburn Hollow Road Metamora, Near Center Point, IL 61548. </li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-headphone-alt"></i> (251) 854-6308 </li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-email"></i> help@wizixo.com</li>
+								<li class="d-flex mb-3"><i class="me-3 display-8 ti-time"></i>
+									<p>Mon - Fri: <strong>09:00 - 21:00</strong> <br>Sat & Sun: <strong>Closed</strong></p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- Footer widget 3 -->
+					<div class="col-md-2 col-sm-6">
+						<div class="widget">
+							<h6>Quick LInks</h6>
+							<ul class="nav flex-column primary-hover">
+								<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+								<li class="nav-item"><a class="nav-link" href="{% url 'index_9'%}">Home</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+								<li class="nav-item"><a class="nav-link" href="#">Portfolio</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Footer widget 4 -->
+
+		<!--footer copyright -->
+
+	<!-- =======================
+	footer  -->
+
+	<!-- Back to top -->
+	<div> <a href="#" class="back-top btn btn-grad"><i class="ti-angle-up"></i></a> </div>
+	
+	<!-- Bootstrap JS -->
+	<script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+
+	<!--Vendors-->
+	<script src="{% static 'vendor/tiny-slider/tiny-slider.js'%}"></script>
+	<script src="{% static 'vendor/isotope/isotope.pkgd.min.js'%}"></script>
+	<script src="{% static 'vendor/imagesloaded/imagesloaded.pkgd.min.html'%}"></script>
+
+	<!--Template Functions-->
+	<script src="{% static 'js/functions.js'%}"></script>
+
+
+<!-- Gráfico 1 (Barra) -->
+<script>
+    // Obtén el contexto del lienzo (canvas) donde se dibujará el gráfico
+    var ctx1 = document.getElementById('pregunta1').getContext('2d');
+
+    // Define una paleta de colores en tonos de verde, azul, morado, amarillo y rojo
+    var colores = [
+        'rgb(72, 201, 176)', // Verde
+        'rgb(95, 158, 209)', // Azul
+        'rgb(186, 104, 200)', // Morado
+        'rgb(255, 214, 51)', // Amarillo
+        'rgb(255, 99, 132)' // Rojo
+    ];
+
+    // Crea un gráfico de barras
+    var grafico1 = new Chart(ctx1, {
+        type: 'bar', // Tipo de gráfico de barras
+        data: {
+            labels: {{ etiquetasPregunta1| safe }},
+            datasets: [{
+                label: 'Cantidad',
+                data: {{ valoresPregunta1| safe }},
+                backgroundColor: colores, // Usa la paleta de colores
+                borderColor: colores, // Puedes usar diferentes colores para los bordes si lo deseas
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+            // Puedes personalizar más opciones según tus necesidades
+        }
+    });
+</script>
+
+<!-- Gráfico 2 (Anillo) -->
+<script>
+    // Obtén el contexto del lienzo (canvas) donde se dibujará el gráfico de anillo
+    var ctx2 = document.getElementById('pregunta2').getContext('2d');
+
+    // Define una paleta de colores en tonos de verde, azul, morado, amarillo y rojo
+    var colores = [
+        'rgb(72, 201, 176)', // Verde
+        'rgb(95, 158, 209)', // Azul
+        'rgb(186, 104, 200)', // Morado
+        'rgb(255, 214, 51)', // Amarillo
+        'rgb(255, 99, 132)' // Rojo
+    ];
+
+    // Crea un gráfico de anillo (donut chart)
+    var grafico2 = new Chart(ctx2, {
+        type: 'doughnut', // Tipo de gráfico de anillo
+        data: {
+            labels: {{ etiquetasPregunta2| safe }},
+            datasets: [{
+                data: {{ valoresPregunta2| safe }},
+                backgroundColor: colores, // Usa la paleta de colores
+                borderColor: 'white', // Color del borde
+                borderWidth: 2
+            }]
+        },
+        options: {
+            // Puedes personalizar más opciones según tus necesidades
+        }
+    });
+</script>
+
+<!-- Gráfico 3 (Pastel) -->
+<script>
+    // Obtén el contexto del lienzo (canvas) donde se dibujará el gráfico de pastel
+    var ctx3 = document.getElementById('pregunta3').getContext('2d');
+
+    // Define una paleta de colores en tonos de verde, azul, morado, amarillo y rojo
+    var colores = [
+        'rgb(72, 201, 176)', // Verde
+        'rgb(95, 158, 209)', // Azul
+        'rgb(186, 104, 200)', // Morado
+        'rgb(255, 214, 51)', // Amarillo
+        'rgb(255, 99, 132)' // Rojo
+    ];
+
+    // Crea un gráfico de pastel
+    var grafico3 = new Chart(ctx3, {
+        type: 'pie', // Tipo de gráfico de pastel
+        data: {
+            labels: {{ etiquetasPregunta3| safe }},
+            datasets: [{
+                data: {{ valoresPregunta3| safe }},
+                backgroundColor: colores, // Usa la paleta de colores
+                borderColor: 'white', // Color del borde
+                borderWidth: 2
+            }]
+        },
+        options: {
+            // Puedes personalizar más opciones según tus necesidades
+        }
+    });
+</script>
+
+<!-- Gráfico 4 (Anillo) -->
+<script>
+    // Obtén el contexto del lienzo (canvas) donde se dibujará el gráfico de anillo
+    var ctx4 = document.getElementById('pregunta4').getContext('2d');
+
+    // Define una paleta de colores en tonos de verde, azul, morado, amarillo y rojo
+    var colores = [
+        'rgb(72, 201, 176)', // Verde
+        'rgb(95, 158, 209)', // Azul
+        'rgb(186, 104, 200)', // Morado
+        'rgb(255, 214, 51)', // Amarillo
+        'rgb(255, 99, 132)' // Rojo
+    ];
+
+    // Crea un gráfico de anillo (donut chart)
+    var grafico4 = new Chart(ctx4, {
+        type: 'doughnut', // Tipo de gráfico de anillo
+        data: {
+            labels: {{ etiquetasPregunta4| safe }},
+            datasets: [{
+                data: {{ valoresPregunta4| safe }},
+                backgroundColor: colores, // Usa la paleta de colores
+                borderColor: 'white', // Color del borde
+                borderWidth: 2
+            }]
+        },
+        options: {
+            // Puedes personalizar más opciones según tus necesidades
+        }
+    });
+</script>
+
+<!-- Gráfico 5 (Barras) -->
+<script>
+    // Obtén el contexto del lienzo (canvas) donde se dibujará el gráfico
+    var ctx5 = document.getElementById('pregunta5').getContext('2d');
+
+    // Define una paleta de colores en tonos de verde, azul, morado, amarillo y rojo para las barras
+    var colores = [
+        'rgb(72, 201, 176)', // Verde
+        'rgb(95, 158, 209)', // Azul
+        'rgb(186, 104, 200)', // Morado
+        'rgb(255, 214, 51)', // Amarillo
+        'rgb(255, 99, 132)' // Rojo
+    ];
+
+    // Crea un gráfico de barras
+    var grafico5 = new Chart(ctx5, {
+        type: 'bar', // Tipo de gráfico de barras
+        data: {
+            labels: {{ etiquetasPregunta5| safe }},
+            datasets: [{
+                label: 'Cantidad',
+                data: {{ valoresPregunta5| safe }},
+                backgroundColor: colores, // Usa la paleta de colores
+                borderColor: colores, // Puedes usar diferentes colores para los bordes si lo deseas
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+            // Puedes personalizar más opciones según tus necesidades
+        }
+    });
+</script>
+
+<!-- Gráfico 6 (Pastel) -->
+<script>
+    // Obtén el contexto del lienzo (canvas) donde se dibujará el gráfico de pastel
+    var ctx6 = document.getElementById('pregunta6').getContext('2d');
+
+    // Define una paleta de colores en tonos de verde, azul, morado, amarillo y rojo
+    var colores = [
+        'rgb(72, 201, 176)', // Verde
+        'rgb(95, 158, 209)', // Azul
+        'rgb(186, 104, 200)', // Morado
+        'rgb(255, 214, 51)', // Amarillo
+        'rgb(255, 99, 132)' // Rojo
+    ];
+
+    // Crea un gráfico de pastel
+    var grafico6 = new Chart(ctx6, {
+        type: 'pie', // Tipo de gráfico de pastel
+        data: {
+            labels: {{ etiquetasPregunta6| safe }},
+            datasets: [{
+                data: {{ valoresPregunta6| safe }},
+                backgroundColor: colores, // Usa la paleta de colores
+                borderColor: 'white', // Color del borde
+                borderWidth: 2
+            }]
+        },
+        options: {
+            // Puedes personalizar más opciones según tus necesidades
+        }
+    });
+</script>
+
+<!-- Gráfico 7 (Barra) -->
+<script>
+    // Obtén el contexto del lienzo (canvas) donde se dibujará el gráfico
+    var ctx7 = document.getElementById('pregunta7').getContext('2d');
+
+    // Define una paleta de colores en tonos de verde, azul, morado, amarillo y rojo
+    var colores = [
+        'rgb(72, 201, 176)', // Verde
+        'rgb(95, 158, 209)', // Azul
+        'rgb(186, 104, 200)', // Morado
+        'rgb(255, 214, 51)', // Amarillo
+        'rgb(255, 99, 132)' // Rojo
+    ];
+
+    // Crea un gráfico de barras
+    var grafico7 = new Chart(ctx7, {
+        type: 'bar', // Tipo de gráfico de barras
+        data: {
+            labels: {{ etiquetasPregunta7| safe }},
+            datasets: [{
+                label: 'Cantidad',
+                data: {{ valoresPregunta7| safe }},
+                backgroundColor: colores, // Usa la paleta de colores
+                borderColor: colores, // Puedes usar diferentes colores para los bordes si lo deseas
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+            // Puedes personalizar más opciones según tus necesidades
+        }
+    });
+</script>
+
+</body>
+
+<!-- Mirrored from wizixo.webestica.com/blog-grid-column-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Sep 2023 01:13:01 GMT -->
+</html>
