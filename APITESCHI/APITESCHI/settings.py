@@ -86,11 +86,11 @@ AUTHENTICATION_BACKENDS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Wattesch',
-        'USER': 'postgres',
-        'PASSWORD': '12345',
-        'HOST': 'localhost',  # Puede variar según tu configuración.
-        'PORT': '5432',           # Puede variar según tu configuración.
+        'NAME': 'iscteschi_xxpf',
+        'USER': 'litzy2023',
+        'PASSWORD': 'NYJjERcFeHK6tyoE8wLLxBBPzizgUAl1',
+        'HOST': 'oregon-postgres.render.com',  # Puede variar según tu configuración. NO PERDER oregon-postgres.render.com
+        'PORT': '5432',           # Puede variar según tu configuración. 
     }
 }
 
