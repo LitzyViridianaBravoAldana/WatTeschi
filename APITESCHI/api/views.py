@@ -222,6 +222,11 @@ class genero10(APIView):
     def get(self,request):
         return render(request,self.template_name) 
     
+class graficasbi(APIView):
+    template_name="graficasbi.html"
+    def get(self,request):
+        return render(request,self.template_name) 
+    
     
 class editorial1(APIView):
     template_name="editorial1.html"

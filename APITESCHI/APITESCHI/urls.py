@@ -1,5 +1,5 @@
 from django.urls import path
-from api.views import sign_in, sign_up, index_9, team, biblioteca, genero1, genero2, genero3, genero4, genero5 , genero6, genero7, genero8, genero9, genero10, editorial1, editorial2, editorial3, editorial4, favoritos, password_recovery, graficas
+from api.views import sign_in, sign_up, index_9, team, biblioteca, genero1, genero2, genero3, genero4, genero5 , genero6, genero7, genero8, genero9, genero10, editorial1, editorial2, editorial3, editorial4, favoritos, password_recovery, graficas, graficasbi
 #from tasks import views
 
 urlpatterns = [
@@ -75,4 +75,7 @@ urlpatterns = [
     
     # Ruta para la página de Team de autores
     path('graficas/', graficas.as_view(), name='graficas'),
+
+    # Ruta para la página de Team de autores
+    path('graficasbi/', graficasbi.as_view(), name='graficasbi'),
 ]
