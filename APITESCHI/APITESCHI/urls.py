@@ -5,7 +5,7 @@ from api.views import sign_in, sign_up, index_9, team, biblioteca, genero1, gene
 urlpatterns = [
     # Ruta para la página index_9
     #path('index_9.html', index_9.as_view(), name='index_9'),
-    path('index_9.html/', index_9.as_view(), name='index_9'),
+    path('index_9/', index_9.as_view(), name='index_9'),
 
 
     # Ruta para la URL raíz (puede ser una de las páginas anteriores)
