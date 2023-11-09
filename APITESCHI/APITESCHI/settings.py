@@ -70,7 +70,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'APITESCHI.APITESCHI.urls'
+#ROOT_URLCONF = 'APITESCHI.APITESCHI.urls'
+ROOT_URLCONF = 'APITESCHI.urls'
 
 TEMPLATES = [
     {
@@ -88,7 +89,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'APITESCHI.APITESCHI.wsgi.application'
+#WSGI_APPLICATION = 'APITESCHI.APITESCHI.wsgi.application'
+WSGI_APPLICATION = 'APITESCHI.wsgi.application'
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -101,18 +103,30 @@ AUTHENTICATION_BACKENDS = [
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#BD PARA QUE FUNCIONE EN RENDER
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'iscteschi_xxpf',
+#         'USER': 'litzy2023',
+#         'PASSWORD': 'NYJjERcFeHK6tyoE8wLLxBBPzizgUAl1',
+#         'HOST': 'oregon-postgres.render.com',  # Puede variar según tu configuración. NO PERDER oregon-postgres.render.com
+#         'PORT': '5432',           # Puede variar según tu configuración. 
+#     }
+# }
 
+
+#BD con postgres local
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'iscteschi_xxpf',
-        'USER': 'litzy2023',
-        'PASSWORD': 'NYJjERcFeHK6tyoE8wLLxBBPzizgUAl1',
-        'HOST': 'oregon-postgres.render.com',  # Puede variar según tu configuración. NO PERDER oregon-postgres.render.com
-        'PORT': '5432',           # Puede variar según tu configuración. 
+        'NAME': 'Wattesch',
+        'USER': 'postgres',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',  # Puede variar según tu configuración.
+        'PORT': '5432',           # Puede variar según tu configuración.
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

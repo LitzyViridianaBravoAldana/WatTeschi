@@ -226,6 +226,12 @@ class graficasbi(APIView):
     template_name="graficasbi.html"
     def get(self,request):
         return render(request,self.template_name) 
+
+    
+class home(APIView):
+    template_name="home.html"
+    def get(self,request):
+        return render(request,self.template_name) 
     
     
 class editorial1(APIView):
