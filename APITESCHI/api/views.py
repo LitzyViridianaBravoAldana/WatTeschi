@@ -259,6 +259,11 @@ class favoritos(APIView):
     def get(self,request):
         return render(request,self.template_name) 
     
+class COPIA(APIView):
+    template_name="COPIA.html"
+    def get(self,request):
+        return render(request,self.template_name) 
+    
 #GRAFICAS
 class graficas(APIView):
     template_name="graficas.html"
@@ -392,7 +397,7 @@ class BuscarLibros(APIView):
 
     def get(self, request, *args, **kwargs):
         clave_api = 'AIzaSyA27V8fGhuo3IeGidHrY5w_FC3NSZ2w2zA'
-        query_busqueda = 'cien años'
+        query_busqueda = 'ORGULLO'
         url = f'https://www.googleapis.com/books/v1/volumes?q={query_busqueda}&key={clave_api}'
         response = requests.get(url)
 
