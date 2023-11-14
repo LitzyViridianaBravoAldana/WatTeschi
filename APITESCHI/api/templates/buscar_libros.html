@@ -11,26 +11,26 @@
     <h1>Resultados de búsqueda de libros</h1>
 
     {% if autores %}
-    <h2>Autores</h2>
-    <ul>
-        {% for autor in autores %}
-            <li>{{ autor.Nombre }} {{ autor.Apellido_P }} {{ autor.Apellido_M }} - {{ autor.Biografia }}</li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No se encontraron autores.</p>
-{% endif %}
+        <h2>Autores</h2>
+        <ul>
+            {% for autor in autores %}
+                <li>{{ autor.Nombre }} - {{ autor.Biografia }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron autores.</p>
+    {% endif %}
 
-{% if libros %}
-    <h2>Libros</h2>
-    <ul>
-        {% for libro in libros %}
-            <li><strong>{{ libro.Titulo }}</strong> - {{ libro.Sinopsis }}</li>
-        {% endfor %}
-    </ul>
-{% else %}
-    <p>No se encontraron libros.</p>
-{% endif %}
+    {% if libros %}
+        <h2>Libros</h2>
+        <ul>
+            {% for libro in libros %}
+                <li><strong>{{ libro.Titulo }}</strong> - {{ libro.Sinopsis }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No se encontraron libros.</p>
+    {% endif %}
 
 </body>
 </html>

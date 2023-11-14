@@ -386,46 +386,46 @@ from rest_framework.response import Response
 from django.shortcuts import render
 import requests
 
+# Modificación en la clase BuscarLibros
 class BuscarLibros(APIView):
     template_name = "buscar_libros.html"
 
     def get(self, request, *args, **kwargs):
-        # Clave API de Google
         clave_api = 'AIzaSyA27V8fGhuo3IeGidHrY5w_FC3NSZ2w2zA'
-
-        # Término de búsqueda
-        query_busqueda = 'Python'
-
-        # Realizar solicitud a la API de Google Books
+        query_busqueda = 'cien años'
         url = f'https://www.googleapis.com/books/v1/volumes?q={query_busqueda}&key={clave_api}'
         response = requests.get(url)
 
-        # Inicializar listas para títulos y autores
-        titulos = []
         autores = []
+        libros = []
 
-        # Verificar si la solicitud fue exitosa (código de estado 200)
         if response.status_code == 200:
-            # Obtener datos de respuesta en formato JSON
             data = response.json()
 
-            # Extraer información sobre libros
             for item in data.get('items', []):
                 volume_info = item.get('volumeInfo', {})
                 title = volume_info.get('title', 'N/A')
-                author = ', '.join(volume_info.get('authors', ['N/A']))
+                authors = volume_info.get('authors', ['N/A'])
+                description = volume_info.get('description', 'N/A')
 
-                # Agregar títulos y autores a las listas
-                titulos.append(title)
-                autores.append(author)
+                # Agregar información del autor a la lista de autores
+                for author in authors:
+                    autores.append({
+                        'Nombre': author,
+                        'Biografia': 'Biografía no disponible'
+                    })
+
+                # Agregar información del libro a la lista de libros
+                libros.append({
+                    'Titulo': title,
+                    'Sinopsis': description
+                })
 
         else:
             print(f'Error en la solicitud: {response.status_code}')
 
-        # Pasar datos a la plantilla y renderizar la página
-        return render(request, self.template_name, {'titulos': titulos, 'autores': autores})
+        return render(request, self.template_name, {'autores': autores, 'libros': libros})
 
-#fin de codigo de google apis
 
 
 
