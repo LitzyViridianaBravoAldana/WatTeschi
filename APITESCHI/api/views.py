@@ -396,8 +396,14 @@ class BuscarLibros(APIView):
     template_name = "buscar_libros.html"
 
     def get(self, request, *args, **kwargs):
-        clave_api = 'AIzaSyA27V8fGhuo3IeGidHrY5w_FC3NSZ2w2zA'
-        query_busqueda = 'ORGULLO'
+        # Obtener el término de búsqueda desde los parámetros GET
+        query_busqueda = request.GET.get('search', '')
+        
+        # Verificar si se proporciona un término de búsqueda
+        if not query_busqueda:
+            return render(request, self.template_name, {'autores': [], 'libros': []})
+
+        clave_api = 'AIzaSyA27V8fGhuo3IeGidHrY5w_FC3NSZ2w2zA'  # Tu clave API de Google
         url = f'https://www.googleapis.com/books/v1/volumes?q={query_busqueda}&key={clave_api}'
         response = requests.get(url)
 
@@ -430,7 +436,6 @@ class BuscarLibros(APIView):
             print(f'Error en la solicitud: {response.status_code}')
 
         return render(request, self.template_name, {'autores': autores, 'libros': libros})
-
 
 
 

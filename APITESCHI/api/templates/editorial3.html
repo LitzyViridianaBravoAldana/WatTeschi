@@ -170,13 +170,13 @@
 				<!-- Header Extras Start-->
 				<div class="navbar-nav">
 					<!-- extra item Search-->
-					<div class="nav-item search border-0 ps-3 pe-0 px-lg-2" id="search">
-						<a class="nav-link" data-bs-toggle="collapse" href="#search-open"><i class="ti-search"> </i></a>
-					</div>
-					<!-- extra item Btn-->
-					<div class="nav-item border-0 d-none d-lg-inline-block align-self-center">
-						<a href="#" class=" btn btn-sm btn-grad text-white mb-0">Favoritos!</a>
-					</div>
+					<form method="get" action="{% url 'buscar_libros'%}">
+						<div class="input-group">
+							<input class="form-control rounded-start border-end-0 mb-0" type="text" name="search" autofocus placeholder="¿Qué estás buscando?">
+							<button type="submit" class="btn btn-grad m-0">Buscar</button>
+						</div>
+					</form>
+					
 				</div>
 				<!-- Header Extras End-->
 			</div>
