@@ -63,13 +63,6 @@ class Resena(models.Model):
     Comentario = models.CharField(max_length=150,db_column='Comentario')
     class Meta:
         db_table='Resena'
-class Lista_Deseos(models.Model):
-    id_Lista_Deseos = models.AutoField(primary_key=True,db_column='Id_Lista_Deseos')
-    Fk_Id_Libro = models.ForeignKey(Libro,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Libro')
-    Fk_Id_Usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Usuario')
-    Fecha_Agregado = models.DateTimeField(db_column='Fecha_Agregado')
-    class Meta:
-        db_table='Lista_Deseados'
 class Bibilioteca(models.Model):
     Id_Biblioteca = models.AutoField(primary_key=True,db_column='Id_Biblioteca')
     Fk_Id_Libro = models.ForeignKey(Libro,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Libro')
