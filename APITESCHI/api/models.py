@@ -30,14 +30,14 @@ class Idioma(models.Model):
         db_table='Idiomas'
 class Editorial(models.Model):
     Id_Editorial = models.AutoField(primary_key=True,db_column='Id_Editorial')
-    Fk_Id_pais = models.ForeignKey(Pais,on_delete=models.CASCADE,default=1,db_column='fk_pais')
+    Fk_Id_Pais = models.ForeignKey(Pais,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Pais')
     Nombre_Editorial = models.TextField(db_column='Nombre_Editorial')
     Sitio_Web = models.URLField(db_column='Sitio_Web')
     class Meta:
         db_table='Editoriales'
 class Autor(models.Model):
     Id_Autor = models.AutoField(primary_key=True,db_column='Id_Autor')
-    Fk_Id_pais = models.ForeignKey(Pais,on_delete=models.CASCADE,default=1,db_column='fk_pais')
+    Fk_Id_Pais = models.ForeignKey(Pais,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Pais')
     Nombre = models.CharField(max_length=25,db_column='Nombre')
     Apellido_P = models.CharField(max_length=20,db_column='Apellido_P')
     Apellido_M = models.CharField(max_length=20,db_column='Apellido_M')
@@ -59,7 +59,7 @@ class Resena(models.Model):
     Id_Resena = models.AutoField(primary_key=True,db_column='Id_Resena')
     Fk_Id_Libro = models.ForeignKey(Libro,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Libro')
     Fk_Id_Usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Usuario')
-    calificacion = models.IntegerField(db_column='Calificacion')
+    Calificacion = models.IntegerField(db_column='Calificacion')
     Comentario = models.CharField(max_length=150,db_column='Comentario')
     class Meta:
         db_table='Resena'

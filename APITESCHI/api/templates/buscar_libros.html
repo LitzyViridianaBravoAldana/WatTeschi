@@ -1,0 +1,36 @@
+<!-- buscar_libros.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de búsqueda de libros</title>
+</head>
+<body>
+    <h1>Resultados de búsqueda de libros</h1>
+
+    {% if autores %}
+    <h2>Autores</h2>
+    <ul>
+        {% for autor in autores %}
+            <li>{{ autor.Nombre }} {{ autor.Apellido_P }} {{ autor.Apellido_M }} - {{ autor.Biografia }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron autores.</p>
+{% endif %}
+
+{% if libros %}
+    <h2>Libros</h2>
+    <ul>
+        {% for libro in libros %}
+            <li><strong>{{ libro.Titulo }}</strong> - {{ libro.Sinopsis }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontraron libros.</p>
+{% endif %}
+
+</body>
+</html>
