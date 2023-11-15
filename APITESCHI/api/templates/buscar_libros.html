@@ -169,16 +169,12 @@
 				<div class="navbar-nav">
 					<!-- extra item Search-->
 					<form method="get" action="{% url 'buscar_libros'%}">
-						<div class="input-group">
-							<input class="form-control rounded-start border-end-0 mb-0" type="text" name="search" autofocus placeholder="¿Qué estás buscando?">
-							<button type="submit" class="btn btn-grad m-0">Buscar</button>
-						</div>
-					</form>
-					
-					<!-- extra item Btn-->
-					<div class="nav-item border-0 d-none d-lg-inline-block align-self-center">
-						<a href="#" class=" btn btn-sm btn-grad text-white mb-0">Favoritos!</a>
+					<div class="input-group">
+						<input class="form-control rounded-start border-end-0 mb-0" type="text" name="search" autofocus placeholder="¿Qué estás buscando?">
+						<button type="submit" class="btn btn-grad m-0">Buscar</button>
 					</div>
+				</form>
+
 				</div>
 				<!-- Header Extras End-->
 			</div>
@@ -194,13 +190,9 @@
 		<div class="container">
 			<div class="row all-text-white">
 				<div class="col-md-12 align-self-center">
-					<h1 class="fw-bold">Blog Grid</h1>
-					<h6 class="mb-5">We transform your perception into an excellent website</h6>
+					<h1 class="fw-bold">Resultados de búsqueda de libros</h1>
+					<h6 class="mb-5">estos son todos los resultados</h6>
 					<nav aria-label="breadcrumb">
-						<ol class="breadcrumb justify-content-center">
-							<li class="breadcrumb-item active"><a href="{% url 'index_9'%}"><i class="ti-home"></i> Home</a></li>
-							<li class="breadcrumb-item">Blog Grid</li>
-						</ol>
 					</nav>
 				</div>
 			</div>
@@ -211,31 +203,74 @@
 
 	<!-- =======================
 	blog -->
-	<section class="blog-page pb-0">
-		<h1>Resultados de búsqueda de libros</h1>
+<!-- Resto de tu HTML ... -->
 
-		{% if autores %}
-			<h2>Autores</h2>
-			<ul>
-				{% for autor in autores %}
-					<li>{{ autor.Nombre }} - {{ autor.Biografia }}</li>
-				{% endfor %}
-			</ul>
-		{% else %}
-			<p>No se encontraron autores.</p>
-		{% endif %}
-	
-		{% if libros %}
-			<h2>Libros</h2>
-			<ul>
-				{% for libro in libros %}
-					<li><strong>{{ libro.Titulo }}</strong> - {{ libro.Sinopsis }}</li>
-				{% endfor %}
-			</ul>
-		{% else %}
-			<p>No se encontraron libros.</p>
-		{% endif %}
-	</section>
+<section class="team social-hover team-overlay">
+	<div class="container">
+		<div class="row">
+			<!-- Tabla de Autores -->
+			<div class="table-container">
+				<h2>Autores</h2>
+				{% if autores %}
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Nombre</th>
+									<th>Biografía</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for autor in autores %}
+									<tr>
+										<td>{{ autor.Nombre }}</td>
+										<td>{{ autor.Biografia }}</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				{% else %}
+					<p>No se encontraron autores.</p>
+				{% endif %}
+			</div>
+
+			<!-- Tabla de Libros -->
+			<div class="table-container">
+				<h2>Libros</h2>
+				{% if libros %}
+					<div class="table-responsive">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>Título</th>
+									<th>Sinopsis</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for libro in libros %}
+									<tr>
+										<td>{{ libro.Titulo }}</td>
+										<td>{{ libro.Sinopsis }}</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				{% else %}
+					<p>No se encontraron libros.</p>
+				{% endif %}
+			</div>
+			<!-- Sección de resultados de búsqueda -->
+<!-- Resto de tu HTML ... -->
+		</div>
+		<!-- row end -->
+	</div>
+</section>
+
+
+
+
 	<!-- =======================
 	blog -->
 

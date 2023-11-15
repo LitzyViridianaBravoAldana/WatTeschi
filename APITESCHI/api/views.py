@@ -391,7 +391,9 @@ from rest_framework.response import Response
 from django.shortcuts import render
 import requests
 
+#        clave_api = 'AIzaSyA27V8fGhuo3IeGidHrY5w_FC3NSZ2w2zA'  # Tu clave API de Google
 # Modificación en la clase BuscarLibros
+
 class BuscarLibros(APIView):
     template_name = "buscar_libros.html"
 
