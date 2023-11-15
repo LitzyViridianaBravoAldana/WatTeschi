@@ -25,6 +25,24 @@
 
 	<!-- Theme CSS -->
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+	<style>
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 20px;
+		}
+	
+		th, td {
+			border: 1px solid #ddd;
+			padding: 8px;
+			text-align: left;
+		}
+	
+		th {
+			background-color: #f2f2f2;
+		}
+	</style>
+	
 
 </head>
 
@@ -166,16 +184,6 @@
 						<!-- Menu item 6 Docs-->
 				<!-- Main Menu End -->
 				<!-- Header Extras Start-->
-				<div class="navbar-nav">
-					<!-- extra item Search-->
-					<form method="get" action="{% url 'buscar_libros'%}">
-					<div class="input-group">
-						<input class="form-control rounded-start border-end-0 mb-0" type="text" name="search" autofocus placeholder="¿Qué estás buscando?">
-						<button type="submit" class="btn btn-grad m-0">Buscar</button>
-					</div>
-				</form>
-
-				</div>
 				<!-- Header Extras End-->
 			</div>
 		</nav>
@@ -190,7 +198,7 @@
 		<div class="container">
 			<div class="row all-text-white">
 				<div class="col-md-12 align-self-center">
-					<h1 class="fw-bold">Resultados de búsqueda de libros</h1>
+					<h1 class="fw-bold">Resultados de búsqueda de libros y Autores</h1>
 					<h6 class="mb-5">estos son todos los resultados</h6>
 					<nav aria-label="breadcrumb">
 					</nav>
@@ -208,61 +216,62 @@
 <section class="team social-hover team-overlay">
 	<div class="container">
 		<div class="row">
-			<!-- Tabla de Autores -->
-			<div class="table-container">
-				<h2>Autores</h2>
-				{% if autores %}
-					<div class="table-responsive">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Nombre</th>
-									<th>Biografía</th>
-								</tr>
-							</thead>
-							<tbody>
-								{% for autor in autores %}
-									<tr>
-										<td>{{ autor.Nombre }}</td>
-										<td>{{ autor.Biografia }}</td>
-									</tr>
-								{% endfor %}
-							</tbody>
-						</table>
-					</div>
-				{% else %}
-					<p>No se encontraron autores.</p>
-				{% endif %}
-			</div>
+			<!-- Agrega un formulario para permitir a los usuarios ingresar parámetros de búsqueda adicionales -->
+			<form method="get" action="{% url 'buscar_libros'%}">
+				<div class="input-group">
+					<input class="form-control rounded-start border-end-0 mb-0" type="text" name="search" autofocus placeholder="¿Qué estás buscando?">
+					
+					<button type="submit" class="btn btn-grad m-0">Buscar</button>
+				</div>
+			</form>
 
-			<!-- Tabla de Libros -->
-			<div class="table-container">
-				<h2>Libros</h2>
-				{% if libros %}
-					<div class="table-responsive">
-						<table class="table">
-							<thead>
-								<tr>
-									<th>Título</th>
-									<th>Sinopsis</th>
-								</tr>
-							</thead>
-							<tbody>
-								{% for libro in libros %}
-									<tr>
-										<td>{{ libro.Titulo }}</td>
-										<td>{{ libro.Sinopsis }}</td>
-									</tr>
-								{% endfor %}
-							</tbody>
-						</table>
-					</div>
-				{% else %}
-					<p>No se encontraron libros.</p>
-				{% endif %}
-			</div>
-			<!-- Sección de resultados de búsqueda -->
-<!-- Resto de tu HTML ... -->
+			<!-- Muestra los resultados en dos tablas, una para autores y otra para libros -->
+			<h2>Autores</h2>
+			{% if autores %}
+				<table>
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Biografía</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for autor in autores %}
+							<tr>
+								<td>{{ autor.Nombre }}</td>
+								<td>{{ autor.Biografia }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% else %}
+				<p>No se encontraron autores.</p>
+			{% endif %}
+
+			<h2>Libros</h2>
+			{% if libros %}
+				<table>
+					<thead>
+						<tr>
+							<th>Título</th>
+							<th>Sinopsis</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for libro in libros %}
+							<tr>
+								<td>{{ libro.Titulo }}</td>
+								<td>{{ libro.Sinopsis }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			{% else %}
+				<p>No se encontraron libros.</p>
+			{% endif %}
+
+
+			<!-- Resto de tu HTML ... -->
 		</div>
 		<!-- row end -->
 	</div>

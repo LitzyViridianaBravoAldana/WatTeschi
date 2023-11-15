@@ -384,8 +384,6 @@ class password_recovery(APIView):
         # Logica de recuperacion de pasword
 
 #codigo de api de google books
-# views.py
-# views.py
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from django.shortcuts import render
@@ -395,6 +393,112 @@ import requests
 # Modificación en la clase BuscarLibros
 
 class BuscarLibros(APIView):
+    template_name = "buscar_libros.html"
+
+    def get(self, request, *args, **kwargs):
+        # Obtener los términos de búsqueda desde los parámetros GET
+        query_busqueda = request.GET.get('search', '')
+        categoria = request.GET.get('categoria', '')
+        fecha_publicacion = request.GET.get('fecha_publicacion', '')
+        idioma = request.GET.get('idioma', '')
+
+        # Construir la URL de la API con los parámetros de búsqueda
+        clave_api = 'AIzaSyA27V8fGhuo3IeGidHrY5w_FC3NSZ2w2zA'  # Reemplazar con tu clave API de Google
+        url = f'https://www.googleapis.com/books/v1/volumes?q={query_busqueda}&key={clave_api}'
+
+        # Agregar parámetros de búsqueda adicionales si están presentes
+        if categoria:
+            url += f'&subject:{categoria}'
+
+        if fecha_publicacion:
+            url += f'&inauthor:{fecha_publicacion}'
+
+        if idioma:
+            url += f'&langRestrict={idioma}'
+
+        response = requests.get(url)
+
+        autores = []
+        libros = []
+
+        if response.status_code == 200:
+            data = response.json()
+
+            for item in data.get('items', []):
+                volume_info = item.get('volumeInfo', {})
+                title = volume_info.get('title', 'N/A')
+                authors = volume_info.get('authors', ['N/A'])
+                description = volume_info.get('description', 'N/A')
+
+                for author in authors:
+                    autores.append({
+                        'Nombre': author,
+                        'Biografia': 'Biografía no disponible'
+                    })
+
+                libros.append({
+                    'Titulo': title,
+                    'Sinopsis': description
+                })
+
+        else:
+            print(f'Error en la solicitud: {response.status_code}')
+
+        return render(request, self.template_name, {'autores': autores, 'libros': libros})
+
+    template_name = "buscar_libros.html"
+
+    def get(self, request, *args, **kwargs):
+        # Obtener los términos de búsqueda desde los parámetros GET
+        query_busqueda = request.GET.get('search', '')
+        categoria = request.GET.get('categoria', '')
+        fecha_publicacion = request.GET.get('fecha_publicacion', '')
+        idioma = request.GET.get('idioma', '')
+
+        # Construir la URL de la API con los parámetros de búsqueda
+        clave_api = 'AIzaSyA27V8fGhuo3IeGidHrY5w_FC3NSZ2w2zA'  # Reemplazar con tu clave API de Google
+        url = f'https://www.googleapis.com/books/v1/volumes?q={query_busqueda}&key={clave_api}'
+
+        # Agregar parámetros de búsqueda adicionales si están presentes
+        if categoria:
+            url += f'&subject:{categoria}'
+
+        if fecha_publicacion:
+            url += f'&inauthor:{fecha_publicacion}'
+
+        if idioma:
+            url += f'&langRestrict={idioma}'
+
+        response = requests.get(url)
+
+        autores = []
+        libros = []
+
+        if response.status_code == 200:
+            data = response.json()
+
+            for item in data.get('items', []):
+                volume_info = item.get('volumeInfo', {})
+                title = volume_info.get('title', 'N/A')
+                authors = volume_info.get('authors', ['N/A'])
+                description = volume_info.get('description', 'N/A')
+
+                for author in authors:
+                    autores.append({
+                        'Nombre': author,
+                        'Biografia': 'Biografía no disponible'
+                    })
+
+                libros.append({
+                    'Titulo': title,
+                    'Sinopsis': description
+                })
+
+        else:
+            print(f'Error en la solicitud: {response.status_code}')
+
+        return render(request, self.template_name, {'autores': autores, 'libros': libros})
+
     template_name = "buscar_libros.html"
 
     def get(self, request, *args, **kwargs):
