@@ -44,6 +44,7 @@ class Autor(models.Model):
     Biografia = models.CharField(max_length=200,db_column='Biografia')
     class Meta:
         db_table='Autores'
+
 class Libro(models.Model):
     Id_Libro = models.AutoField(primary_key=True,db_column='Id_Libro')
     Fk_Id_Autor = models.ForeignKey(Autor,on_delete=models.CASCADE,default=1,db_column='fk_id_Autor')
@@ -53,6 +54,7 @@ class Libro(models.Model):
     Fecha_Publicacion = models.DateField(db_column='Fecha_Registro')
     Titulo = models.TextField(max_length=250,db_column='Titulo')
     Sinopsis = models.CharField(max_length=300,db_column='Sinopsis')
+    en_biblioteca = models.BooleanField(default=True)  # Nueva columna para indicar si el libro está en la biblioteca
     class Meta:
         db_table='Libros'
 class Resena(models.Model):

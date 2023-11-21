@@ -214,68 +214,55 @@
 <!-- Resto de tu HTML ... -->
 
 <section class="team social-hover team-overlay">
-	<div class="container">
-		<div class="row">
-			<!-- Agrega un formulario para permitir a los usuarios ingresar parámetros de búsqueda adicionales -->
-			<form method="get" action="{% url 'buscar_libros'%}">
-				<div class="input-group">
-					<input class="form-control rounded-start border-end-0 mb-0" type="text" name="search" autofocus placeholder="¿Qué estás buscando?">
-					
-					<button type="submit" class="btn btn-grad m-0">Buscar</button>
-				</div>
-			</form>
+    <div class="container">
+        <div class="row">
+            <form method="get" action="{% url 'buscar_libros'%}">
+                <div class="input-group">
+                    <input class="form-control rounded-start border-end-0 mb-0" type="text" name="search" autofocus placeholder="¿Qué estás buscando?">
+                    <button type="submit" class="btn btn-grad m-0">Buscar</button>
+                </div>
+            </form>
 
-			<!-- Muestra los resultados en dos tablas, una para autores y otra para libros -->
-			<h2>Autores</h2>
-			{% if autores %}
-				<table>
-					<thead>
-						<tr>
-							<th>Nombre</th>
-							<th>Biografía</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for autor in autores %}
-							<tr>
-								<td>{{ autor.Nombre }}</td>
-								<td>{{ autor.Biografia }}</td>
-							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			{% else %}
-				<p>No se encontraron autores.</p>
-			{% endif %}
+            <h2>Autores</h2>
+            {% if autores %}
+                <!-- Código para la tabla de autores -->
+            {% else %}
+                <p>No se encontraron autores.</p>
+            {% endif %}
 
-			<h2>Libros</h2>
-			{% if libros %}
-				<table>
-					<thead>
-						<tr>
-							<th>Título</th>
-							<th>Sinopsis</th>
-						</tr>
-					</thead>
-					<tbody>
-						{% for libro in libros %}
-							<tr>
-								<td>{{ libro.Titulo }}</td>
-								<td>{{ libro.Sinopsis }}</td>
-							</tr>
-						{% endfor %}
-					</tbody>
-				</table>
-			{% else %}
-				<p>No se encontraron libros.</p>
-			{% endif %}
-
-
-			<!-- Resto de tu HTML ... -->
-		</div>
-		<!-- row end -->
-	</div>
+            <h2>Libros</h2>
+            {% if libros %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Sinopsis</th>
+                            <th>En Biblioteca</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for libro in libros %}
+                            <tr>
+                                <td>{{ libro.Titulo }}</td>
+                                <td>{{ libro.Sinopsis }}</td>
+                                <td>{% if libro.en_biblioteca %}Sí{% else %}No{% endif %}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No se encontraron libros.</p>
+            {% endif %}
+        </div>
+    </div>
 </section>
+
+<!-- Resto de tu HTML ... -->
+
+
+<!-- Resto de tu HTML ... -->
+
+
 
 
 
