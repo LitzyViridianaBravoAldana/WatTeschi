@@ -167,6 +167,16 @@ class biblioteca(APIView):
     def get(self,request):
         return render(request,self.template_name) 
     
+class registro_libro(APIView):
+    template_name="registro_libro.html"
+    def get(self,request):
+        return render(request,self.template_name) 
+    
+class registro_autor_genero(APIView):
+    template_name="registro_autor_genero.html"
+    def get(self,request):
+        return render(request,self.template_name) 
+    
 
 class genero1(APIView):
     template_name="genero1.html"

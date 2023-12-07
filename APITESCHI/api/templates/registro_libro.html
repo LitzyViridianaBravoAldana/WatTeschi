@@ -1,0 +1,277 @@
+    {% load static %}
+    <!doctype html>
+    <html lang="en">
+
+    <!-- Mirrored from wizixo.webestica.com/elements-forms.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Sep 2023 01:13:08 GMT -->
+    <head>
+        <title>WATTESCHI| Los libros al alcance de tu mano</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Webestica.com">
+        <meta name="description" content="Creative Multipurpose Bootstrap Template">
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{% static 'images/libico.ico'%}">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900%7CPlayfair+Display:400,400i,700,700i%7CRoboto:400,400i,500,700" rel="stylesheet">
+
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/font-awesome/css/all.min.css'%}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/themify-icons/css/themify-icons.css'%}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.min.css'%}" />
+
+        <!-- Theme CSS -->
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}" />
+        
+    </head>
+
+    <body>
+        <div class="preloader">
+            <img src="{% static 'images/libico.ico" alt="Pre-loader'%}">
+        </div>
+
+        <!-- =======================
+        header Start-->
+        <header class="navbar-transparent navbar-dark">
+            <!-- Search -->
+            <div class="top-search collapse bg-light" id="search-open" data-bs-parent="#search">
+                <div class="container">
+                    <div class="row position-relative">
+                        <div class="col-md-8 mx-auto py-5">
+                            <form>
+                                <div class="input-group">
+                                    <input class="form-control rounded-start border-end-0 mb-0" type="text" name="search" placeholder="¿Qué libro deseas buscar?">
+                                    <button type="button" class="btn btn-grad m-0">Buscar</button>
+                                </div>
+                            </form>
+                            <p class="small mt-2 mb-0"><strong>e.g.</strong>Los juegos del hambre </p>
+                        </div>
+                        <a class="position-absolute top-0 end-0 mt-3 me-3 text-end" data-bs-toggle="collapse" href="#search-open"><i class="fa fa-window-close"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Search -->
+    
+            <!-- Logo Nav Start -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="{% url 'index_9'%}">
+                        <img class="navbar-brand-item" src="{% static 'images/libico.ico'%}" alt="Wizixo">
+                    </a>
+                    <!-- Menu opener button -->
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Main Menu Start -->
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav navbar-nav-scroll navbar-nav-scroll ms-auto">
+                            <!-- Menu item 1 Demos-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active dropdown-toggle" href="#" id="demosMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Genero</a>
+                                <div class="dropdown-menu pb-3 pb-lg-0" aria-labelledby="demosMenu" >
+                                    <div class="d-block d-sm-flex">
+                                        <ul class="list-unstyled w-100 w-sm-50 pe-0 pe-lg-5">
+                                            <!--<li class="dropdown-header">Business Homepages</li> -->
+                                            <li> <a class="dropdown-item" href="{% url 'genero1'%}">Terror</a> </li>
+                                            <li> <a class="dropdown-item" href="{% url 'genero2'%}">Ficción</a> </li>
+                                            <li> <a class="dropdown-item" href="{% url 'genero3'%}">Aventura</a> </li>
+                                            <li> <a class="dropdown-item" href="{% url 'genero4'%}">Romance</a> </li>
+                                            <li> <a class="dropdown-item" href="{% url 'genero5'%}">Drama</a> </li>
+                                        </ul>
+                                        <ul class="list-unstyled w-100 w-sm-50 pe-0 pe-lg-5">
+                                            <!--<li class="dropdown-header mt-3 mt-sm-0">Classic Homepages</li> -->
+                                            <li> <a class="dropdown-item" href="{% url 'genero6'%}">Novela</a> </li>
+                                            <li> <a class="dropdown-item" href="{% url 'genero7'%}">Cuentos</a> </li>
+                                            <li> <a class="dropdown-item" href="{% url 'genero8'%}">Poesia</a> </li>
+                                            <li> <a class="dropdown-item active" href="{% url 'genero9'%}">Fantasia</a> </li>
+                                            <li> <a class="dropdown-item" href="{% url 'genero10'%}">Misterio</a> </li>
+                                        </ul>
+                                    </div>
+                                    <!-- mega menu Bottom 
+                                    
+                                    <div class="w-100 bg-grad pattern-overlay-2 p-4 mt-3 all-text-white d-none d-lg-flex">
+                                        <div class="align-self-center me-4">
+                                            <h4 class="mb-0">Checkout the doc!</h4>
+                                            <p class="mb-0 small">For better understanding of theme standard</p>
+                                        </div>
+                                        <a href="documentation/index.html" target="_blank" class="btn btn-outline-white btn-sm mb-0 align-self-center ms-auto">Read more!</a>
+                                    </div>
+                                </div>
+                            </li>
+                                    -->
+                                    
+                            <!-- Menu item 2 Blog-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="blogMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Editorial</a>
+                                <ul class="dropdown-menu" aria-labelledby="blogMenu">
+                                    <li><a class="dropdown-item" href="{% url 'editorial1'%}">Editorial 1</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'editorial2'%}">Editorial 2</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'editorial3'%}">Editorial 3</a></li>
+                                    <li><a class="dropdown-item" href="{% url 'editorial4'%}">Editorial 4</a></li>
+                                </ul>
+                            </li>
+                            <!-- Menu item 3 Pages-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Autores</a>
+                                <ul class="dropdown-menu" aria-labelledby="pagesMenu">
+                                    <li> <a class="dropdown-item" href="{% url 'team'%}">Todos los Autores</a> </li>
+                
+                                </ul>
+                            </li>
+                            <!-- Menu item 4 Portfolio-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="portfolioMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Biblioteca</a>
+                                <ul class="dropdown-menu" aria-labelledby="portfolioMenu">
+                                    <li> <a class="dropdown-item" href="{% url 'biblioteca'%}">Ir a mi Biblioteca</a> </li>
+                                </ul>
+                            </li>
+                            <!-- Menu item 5 Elements-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="portfolioMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi perfil</a>
+                                <ul class="dropdown-menu" aria-labelledby="portfolioMenu">
+                                    <li> <a class="dropdown-item" href="{% url 'sign_in'%}">Salir</a> </li>
+                                    <li> <a class="dropdown-item" href="{% url 'sign_up'%}">Mi sesion</a> </li>
+                                </ul>
+                            </li>
+                            <!-- Menu item 6 Elements-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="portfolioMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TABLA</a>
+                                <ul class="dropdown-menu" aria-labelledby="portfolioMenu">
+                                    <li> <a class="dropdown-item" href="{% url 'favoritos'%}">tabla</a> </li>
+                                </ul>
+                            </li>
+    
+                            <!-- pruebaaaaa-->
+    
+    
+                            <!-- Menu item 6 Elements-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="portfolioMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GRAFICAS</a>
+                                <ul class="dropdown-menu" aria-labelledby="portfolioMenu">
+                                    <li> <a class="dropdown-item" href="{% url 'graficas'%}">Graficas</a> </li>
+                                    <li> <a class="dropdown-item" href="{% url 'graficasbi'%}">Graficas power Bi</a> </li>
+                                </ul>
+                            </li>
+    
+                            <!-- pruebaaaaa-->
+    
+                            <!-- Menu item 6 Docs-->
+                            
+                        </ul>
+                    </div>
+                    <!-- Main Menu End -->
+                    <!-- Header Extras Start-->
+                    <div class="navbar-nav">
+                        <!-- extra item Search-->
+                        <form method="get" action="{% url 'buscar_libros'%}">
+                            <div class="input-group">
+                                <input class="form-control rounded-start border-end-0 mb-0" type="text" name="search" autofocus placeholder="¿Qué estás buscando?">
+                                <button type="submit" class="btn btn-grad m-0">Buscar</button>
+                            </div>
+                        </form>
+                        
+                    </div>
+                    <!-- Header Extras End-->
+                </div>
+            </nav>
+            <!-- Logo Nav End -->
+        </header>
+        <!-- =======================
+        header End-->
+
+        <!-- =======================
+        Banner innerpage -->
+        
+        <div class="text-center bg-overlay-dark-7 py-7" style="background:url(assets/images/bg/04.jpg) no-repeat; background-size:cover; background-position: center center;">
+            <div class="container">
+                <div class="row all-text-white">
+                    <div class="col-md-12 align-self-center">
+                        <h1 class="fw-bold">Mi perfil</h1>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- =======================
+        Banner innerpage -->
+
+        <!-- =======================
+        Form -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input class="form-control" type="email" placeholder="Nombre">
+                        </div>
+                        <div class="form-group">
+                            <label>Apellido</label>
+                            <input class="form-control" type="email" placeholder="Apellido">
+                        </div>
+
+                        <!-- Password -->
+                        <div class="form-group">
+                            <label>Correo</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="example@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Usuario</label>
+                            <input class="form-control" type="email" placeholder="Usuario">
+                        </div>
+                        
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- Multiple select -->
+                        <div class="form-group">
+                            <label>Bibliografia</label>
+                            <textarea class="form-control" rows="5" placeholder="Escribe hacerca de ti..."></textarea>
+                        </div>
+
+                        <!-- form-group -->
+                        <div class="form-group">
+                            <label>Foto de Perfil</label>
+                            <div class="input-group">
+                                <input type="file" class="form-control" id="inputGroupFileProfile">
+                                <label class="input-group-text" for="inputGroupFileProfile">Subir</label>
+                            </div>
+                            <img id="profileImage" class="mt-2" src="#" alt="Vista previa de la foto de perfil" style="max-width: 100px; max-height: 100px; display: none;">
+                        </div>
+
+                        <!-- Radio -->
+                        
+                        <!-- Toggle buttons -->
+                        <input type="checkbox" class="btn-check" id="btn-check-outlined">
+                        <label class="btn btn-outline-primary" for="btn-check-outlined">Aceptar</label><br>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =======================
+        Form -->
+
+        <!-- =======================
+        footer  -->
+
+        <!-- Back to top -->
+        <div> <a href="#" class="back-top btn btn-grad"><i class="ti-angle-up"></i></a> </div>
+
+        <!-- Bootstrap JS -->
+        <script src="{% static 'vendor/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+
+        <!--Template Functions-->
+        <script src="{% static 'js/functions.js'%}"></script>
+
+    </body>
+
+    <!-- Mirrored from wizixo.webestica.com/elements-forms.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Sep 2023 01:13:08 GMT -->
+    </html>

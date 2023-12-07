@@ -2,99 +2,116 @@ from django.db import models
 
 # Create your models here.
 class Usuario(models.Model):
-    id_Usuarios = models.AutoField(primary_key=True,db_column='Id_Usuario')
-    Nombre_Usuario = models.TextField(unique=True,db_column='Nombre_Usuario')
-    Contrasena = models.TextField(db_column='Contrasena')
-    Nombre = models.TextField(db_column='Nombre')
-    Apellido_Pa = models.CharField(max_length=20,db_column='Apellido_P')
-    Correo = models.EmailField(unique=True,db_column='Correo')
+    Id_Usuario = models.AutoField(primary_key=True)
+    Nombre_Usuario = models.TextField()
+    Contrasena = models.TextField()
+    Nombre = models.TextField()
+    Apellido_Pa = models.CharField(max_length=20)
+    Correo = models.EmailField(unique=True)
+
     class Meta:
-        db_table='Usuarios'
+        db_table = 'Usuarios'
 
 class Genero(models.Model):
-    id_Genero = models.AutoField(primary_key=True,db_column='Id_Categoria')
-    Descripcion = models.TextField(unique=True,db_column='Descripcion')
+    Id_Categoria = models.AutoField(primary_key=True)
+    Descripcion = models.TextField()
+    
     class Meta:
-        db_table='Generos'
+        db_table = 'Generos'
+
 class Pais(models.Model):
-    Id_Pais = models.AutoField(primary_key=True,db_column='Id_Pais')
-    Descripcion = models.TextField(db_column='Descripcion')
-    Codigo_Pais = models.TextField(db_column='Codigo_Pais')
+    Id_Pais = models.AutoField(primary_key=True)
+    Descripcion = models.TextField()
+    Codigo_Pais = models.TextField()
+
     class Meta:
-        db_table='Paises'
+        db_table = 'Paises'
+
 class Idioma(models.Model):
-    Id_Idioma = models.AutoField(primary_key=True,db_column='Id_Idioma')
-    Descripcion = models.TextField(unique=True,db_column='Descripcion')
-    Codigo_Idioma = models.TextField(db_column='Codigo_Idioma')
+    Id_Idioma = models.AutoField(primary_key=True)
+    Descripcion = models.CharField(max_length=25, unique=True)
+    Codigo_Idioma = models.TextField()
+
     class Meta:
-        db_table='Idiomas'
+        db_table = 'Idiomas'
+
 class Editorial(models.Model):
-    Id_Editorial = models.AutoField(primary_key=True,db_column='Id_Editorial')
-    Fk_Id_Pais = models.ForeignKey(Pais,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Pais')
-    Nombre_Editorial = models.TextField(db_column='Nombre_Editorial')
-    Sitio_Web = models.URLField(db_column='Sitio_Web')
+    Id_Editorial = models.AutoField(primary_key=True)
+    Fk_Id_Pais = models.ForeignKey(Pais, on_delete=models.CASCADE)
+    Nombre_Editorial = models.TextField()
+    Sitio_Web = models.URLField()
+
     class Meta:
-        db_table='Editoriales'
+        db_table = 'Editoriales'
+
+
 class Autor(models.Model):
-    Id_Autor = models.AutoField(primary_key=True,db_column='Id_Autor')
-    Fk_Id_Pais = models.ForeignKey(Pais,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Pais')
-    Nombre = models.CharField(max_length=25,db_column='Nombre')
-    Apellido_P = models.CharField(max_length=20,db_column='Apellido_P')
-    Apellido_M = models.CharField(max_length=20,db_column='Apellido_M')
-    Biografia = models.CharField(max_length=200,db_column='Biografia')
+    Id_Autor = models.AutoField(primary_key=True)
+    Fk_Id_Pais = models.ForeignKey(Pais, on_delete=models.CASCADE)
+    Nombre = models.CharField(max_length=25)
+    Apellido_P = models.CharField(max_length=20)
+    Apellido_M = models.CharField(max_length=20)
+    Biografia = models.TextField()
     class Meta:
         db_table='Autores'
 
 class Libro(models.Model):
-    Id_Libro = models.AutoField(primary_key=True,db_column='Id_Libro')
-    Fk_Id_Autor = models.ForeignKey(Autor,on_delete=models.CASCADE,default=1,db_column='fk_id_Autor')
-    Fk_Id_Genero = models.ForeignKey(Genero,on_delete=models.CASCADE,default=1,db_column='fk_id_Genero')
-    Fk_Id_Editorial = models.ForeignKey(Editorial,on_delete=models.CASCADE,default=1,db_column='fk_id_Editorial')
-    Fk_Id_Idioma= models.ForeignKey(Idioma,on_delete=models.CASCADE,default=1,db_column='fk_id_Idioma')
-    Fecha_Publicacion = models.DateField(db_column='Fecha_Registro')
-    Titulo = models.TextField(max_length=250,db_column='Titulo')
-    Sinopsis = models.CharField(max_length=300,db_column='Sinopsis')
-    en_biblioteca = models.BooleanField(default=True)  # Nueva columna para indicar si el libro está en la biblioteca
+    Id_Libro = models.AutoField(primary_key=True)
+    Fk_Id_Autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
+    Fk_Id_Genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
+    Fk_Id_Editorial = models.ForeignKey(Editorial, on_delete=models.CASCADE)
+    Fk_Id_Idioma = models.ForeignKey(Idioma, on_delete=models.CASCADE)
+    Fecha_Registro = models.DateField()
+    Titulo = models.TextField()
+    Sinopsis = models.CharField(max_length=300)
+    en_biblioteca = models.BooleanField(default=True)
     class Meta:
         db_table='Libros'
 class Resena(models.Model):
-    Id_Resena = models.AutoField(primary_key=True,db_column='Id_Resena')
-    Fk_Id_Libro = models.ForeignKey(Libro,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Libro')
-    Fk_Id_Usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Usuario')
-    Calificacion = models.IntegerField(db_column='Calificacion')
-    Comentario = models.CharField(max_length=150,db_column='Comentario')
+    Id_Resena = models.AutoField(primary_key=True)
+    Fk_Id_Libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
+    Fk_Id_Usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    Calificacion = models.IntegerField()
+    Comentario = models.CharField(max_length=150)
+
     class Meta:
-        db_table='Resena'
-class Bibilioteca(models.Model):
-    Id_Biblioteca = models.AutoField(primary_key=True,db_column='Id_Biblioteca')
-    Fk_Id_Libro = models.ForeignKey(Libro,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Libro')
-    Fk_Id_Usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE,default=1,db_column='Fk_Id_Usuario')
-    Fecha_Inicio = models.DateTimeField(db_column='Fecha_Inicio')
+        db_table = 'Resena'
+
+class Biblioteca(models.Model):
+    Id_Biblioteca = models.AutoField(primary_key=True)
+    Fk_Id_Libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
+    Fk_Id_Usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    Fecha_Inicio = models.DateTimeField()
+
     class Meta:
-        db_table='Biblioteca'
+        db_table = 'Biblioteca'
+
 
 class Libro_has_Autor(models.Model):
-    Id_Libro_has_Autor = models.AutoField(primary_key=True,db_column='Id_Libro_has_Autor')
-    Fk_Id_Libro = models.ForeignKey(Libro,on_delete=models.CASCADE,db_column='Fk_Id_Libro')
-    Fk_Id_Autor = models.ForeignKey(Autor,on_delete=models.CASCADE,db_column='Fk_Id_Autor')
+    Id_Libro_has_Autor = models.AutoField(primary_key=True)
+    Fk_Id_Libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
+    Fk_Id_Autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
+
     class Meta:
-        db_table='Libro_has_Autor'
+        db_table = 'Libro_has_Autor'
+
 
 class Libro_has_Idioma(models.Model):
-    Id_Libro_has_Idioma = models.AutoField(primary_key=True,db_column='Id_Libro_has_Idioma')
-    Fk_Id_Libro = models.ForeignKey(Libro,on_delete=models.CASCADE,db_column='Fk_Id_Libro')
-    Fk_Id_Idioma = models.ForeignKey(Idioma,on_delete=models.CASCADE,db_column='Fk_Id_Idioma')
+    Id_Libro_has_Idioma = models.AutoField(primary_key=True)
+    Fk_Id_Libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
+    Fk_Id_Idioma = models.ForeignKey(Idioma, on_delete=models.CASCADE)
+
     class Meta:
-        db_table='Libro_has_Idioma'
+        db_table = 'Libro_has_Idioma'
+
 
 class Libro_has_Genero(models.Model):
-    Id_Libro_has_Genero = models.AutoField(primary_key=True,db_column='Id_Libro_has_Genero')
-    Fk_Id_Libro = models.ForeignKey(Libro,on_delete=models.CASCADE,db_column='Fk_Id_Libro')
-    Fk_Id_Genero = models.ForeignKey(Genero,on_delete=models.CASCADE,db_column='Fk_Id_Genero')
+    Id_Libro_has_Genero = models.AutoField(primary_key=True)
+    Fk_Id_Libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
+    Fk_Id_Genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
+
     class Meta:
-        db_table='Libro_has_Genero'
-
-
+        db_table = 'Libro_has_Genero'
 
 class encuestaSatisfaccion(models.Model):
     id_encuesta = models.TextField(db_column='id_encuesta')
