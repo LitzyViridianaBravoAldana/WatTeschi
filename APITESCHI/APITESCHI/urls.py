@@ -1,5 +1,5 @@
 from django.urls import path
-from api.views import sign_in, registro_libro, registro_autor_genero, sign_up, index_9, team, biblioteca, genero1, genero2, genero3, genero4, genero5 , genero6, genero7, genero8, genero9, genero10, editorial1, editorial2, editorial3, editorial4, favoritos, password_recovery, graficas, graficasbi, home, BuscarLibros, COPIA, perfil
+from api.views import registro_informacion, sign_in,registro_datos, registro_libro, registro_autor_genero, sign_up, index_9, team, biblioteca, genero1, genero2, genero3, genero4, genero5 , genero6, genero7, genero8, genero9, genero10, editorial1, editorial2, editorial3, editorial4, favoritos, password_recovery, graficas, graficasbi, home, BuscarLibros, COPIA, perfil
 #from tasks import views
 
 urlpatterns = [
@@ -16,6 +16,10 @@ urlpatterns = [
 
     # Ruta para la página de inicio de sesión
     path('sign_in/', sign_in.as_view(), name='sign_in'),
+
+    path('registro_informacion/', registro_informacion.as_view(), name='registro_informacion'),
+
+    path('registro_datos/', registro_datos.as_view(), name='registro_datos'),
     
     # Ruta para la página de registro
     path('sign_up/', sign_up.as_view(), name='sign_up'),

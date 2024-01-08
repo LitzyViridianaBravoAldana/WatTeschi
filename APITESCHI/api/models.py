@@ -22,7 +22,6 @@ class Genero(models.Model):
 class Pais(models.Model):
     Id_Pais = models.AutoField(primary_key=True)
     Descripcion = models.TextField()
-    Codigo_Pais = models.TextField()
 
     class Meta:
         db_table = 'Paises'
@@ -30,7 +29,6 @@ class Pais(models.Model):
 class Idioma(models.Model):
     Id_Idioma = models.AutoField(primary_key=True)
     Descripcion = models.CharField(max_length=25, unique=True)
-    Codigo_Idioma = models.TextField()
 
     class Meta:
         db_table = 'Idiomas'

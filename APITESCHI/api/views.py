@@ -176,6 +176,14 @@ class registro_autor_genero(APIView):
     template_name="registro_autor_genero.html"
     def get(self,request):
         return render(request,self.template_name) 
+class registro_datos(APIView):
+    template_name="registro_datos.html"
+    def get(self,request):
+        return render(request,self.template_name) 
+class registro_informacion(APIView):
+    template_name="registro_informacion.html"
+    def get(self,request):
+        return render(request,self.template_name) 
     
 
 class genero1(APIView):

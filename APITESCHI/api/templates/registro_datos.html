@@ -189,7 +189,7 @@
             <div class="container">
                 <div class="row all-text-white">
                     <div class="col-md-12 align-self-center">
-                        <h1 class="fw-bold">Mi perfil</h1>
+                        <h1 class="fw-bold">Registro de Datos para Libros</h1>
                         
                     </div>
                 </div>
@@ -202,57 +202,178 @@
         Form -->
         <section>
             <div class="container">
+
                 <div class="row">
                     <div class="col-md-6">
-                        
-
-                        <!-- Email -->
+                        <h1 class="fw-bold">Registrar Pais</h1>
                         <div class="form-group">
-                            <label>Nombre</label>
-                            <input class="form-control" type="email" placeholder="Nombre">
-                        </div>
-                        <div class="form-group">
-                            <label>Apellido</label>
-                            <input class="form-control" type="email" placeholder="Apellido">
+                            <label>Pais</label>
+                            <input class="form-control" type="text" placeholder="México" name="pais" id="pais" required>
                         </div>
 
-                        <!-- Password -->
-                        <div class="form-group">
-                            <label>Correo</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="example@gmail.com">
-                        </div>
-                        <div class="form-group">
-                            <label>Usuario</label>
-                            <input class="form-control" type="email" placeholder="Usuario">
-                        </div>
-                        
                     </div>
+                    <div class="col-md-6" style="margin-top: 50px;">
 
+                        <div class="text-center" style="margin-top: 20px;">
+                            <button type="submit" class="btn btn-outline-primary" id="btnGuardar" name="btnGuardar">Agregar</button>
+                        </div> <!-- end col -->
+
+                    </div> <!-- end col -->
+                </div>
+                <div class="row">
                     <div class="col-md-6">
-                        <!-- Multiple select -->
-                        <div class="form-group">
-                            <label>Bibliografia</label>
-                            <textarea class="form-control" rows="5" placeholder="Escribe hacerca de ti..."></textarea>
-                        </div>
-
-                        <!-- form-group -->
-                        <div class="form-group">
-                            <label>Foto de Perfil</label>
-                            <div class="input-group">
-                                <input type="file" class="form-control" id="inputGroupFileProfile">
-                                <label class="input-group-text" for="inputGroupFileProfile">Subir</label>
-                            </div>
-                            <img id="profileImage" class="mt-2" src="#" alt="Vista previa de la foto de perfil" style="max-width: 100px; max-height: 100px; display: none;">
-                        </div>
-
-                        <!-- Radio -->
-                        
-                        <!-- Toggle buttons -->
-                        <input type="checkbox" class="btn-check" id="btn-check-outlined">
-                        <label class="btn btn-outline-primary" for="btn-check-outlined">Aceptar</label><br>
-
+                       
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <table id="TablaGrupo" class="table table-lg table-noborder table-striped" >
+                                    <thead class="all-text-white bg-grad">
+                                      <tr>
+                                        <th scope="col">Clave</th>
+                                        <th scope="col">Pais</th>
+                                        <th scope="col">EDICION</th>
+                                      </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                          <td scope="col">Clave</td>
+                                          <td scope="col">Pais</td>
+                                          <td scope="col"></td>
+                                        </tr>
+                                        {% for grupo in grupos %}
+                                      <tr>
+                                        <td>{{ grupo.idGrupos }}</td>
+                                        <td>{{ grupo.descripcion }}</td>
+                                        <td>
+                                            <a href="#" class="btn btn-info"><i class="ri-edit-fill" style="color: #f0f0f0;"   onclick="editarGrupo('{{ grupo.idGrupos  }}', '{{ grupo.descripcion }}')"></i></a>
+                                        </td>
+                                      </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                  </table>
+                                
+                            </div> <!-- end card-body -->
+                        </div> <!-- end card -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+
+
+                <div class="row" style="margin-top: 90px;">
+                    <div class="col-md-6">
+                        <h1 class="fw-bold">Registrar Idioma</h1>
+                        <div class="form-group">
+                            <label>Idioma</label>
+                            <input class="form-control" type="text" placeholder="Español">
+                        </div>
+
+                    </div>
+                    <div class="col-md-6" >
+
+                        <div class="text-center" style="margin-top: 70px;">
+                            <button type="submit" class="btn btn-outline-primary" id="btnGuardar" name="btnGuardar">Agregar</button>
+                        </div> <!-- end col -->
+
+                    </div> <!-- end col -->
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <table id="TablaGrupo" class="table table-lg table-noborder table-striped" >
+                                    <thead class="all-text-white bg-grad">
+                                      <tr>
+                                        <th scope="col">Clave</th>
+                                        <th scope="col">Idioma</th>
+                                        <th scope="col">Edicion</th>
+                                      </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                          <td scope="col">Clave</td>
+                                          <td scope="col">Idioma</td>
+                                          <td scope="col"></td>
+                                        </tr>
+                                        {% for grupo in grupos %}
+                                      <tr>
+                                        <td>{{ grupo.idGrupos }}</td>
+                                        <td>{{ grupo.descripcion }}</td>
+                                        <td>
+                                            <a href="#" class="btn btn-info"><i class="ri-edit-fill" style="color: #f0f0f0;"   onclick="editarGrupo('{{ grupo.idGrupos  }}', '{{ grupo.descripcion }}')"></i></a>
+                                        </td>
+                                      </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                  </table>
+                                
+                            </div> <!-- end card-body -->
+                        </div> <!-- end card -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+                <!-- INICIO genero libro -->
+                <div class="row" style="margin-top: 90px;">
+                    <div class="col-md-6">
+                        <h1 class="fw-bold">Registrar Genero de Libros</h1>
+                        <div class="form-group">
+                            <label>Genero</label>
+                            <input class="form-control" type="text" placeholder="Terror">
+                        </div>
+
+                    </div>
+                    <div class="col-md-6" >
+
+                        <div class="text-center" style="margin-top: 70px;">
+                            <button type="submit" class="btn btn-outline-primary" id="btnGuardar" name="btnGuardar">Agregar</button>
+                        </div> <!-- end col -->
+
+                    </div> <!-- end col -->
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <table id="TablaGrupo" class="table table-lg table-noborder table-striped" >
+                                    <thead class="all-text-white bg-grad">
+                                      <tr>
+                                        <th scope="col">Clave</th>
+                                        <th scope="col">Genero</th>
+                                        <th scope="col">Edicion</th>
+                                      </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr>
+                                          <td scope="col">Clave</td>
+                                          <td scope="col">Genero</td>
+                                          <td scope="col"></td>
+                                        </tr>
+                                        {% for grupo in grupos %}
+                                      <tr>
+                                        <td>{{ grupo.idGrupos }}</td>
+                                        <td>{{ grupo.descripcion }}</td>
+                                        <td>
+                                            <a href="#" class="btn btn-info"><i class="ri-edit-fill" style="color: #f0f0f0;"   onclick="editarGrupo('{{ grupo.idGrupos  }}', '{{ grupo.descripcion }}')"></i></a>
+                                        </td>
+                                      </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                  </table>
+                                
+                            </div> <!-- end card-body -->
+                        </div> <!-- end card -->
+                    </div><!-- end col -->
+                </div><!-- end row -->
+
+                <!-- FIN genero libro -->
             </div>
         </section>
 
