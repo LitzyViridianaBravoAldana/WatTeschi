@@ -52,6 +52,8 @@ class Autor(models.Model):
     Apellido_P = models.CharField(max_length=20)
     Apellido_M = models.CharField(max_length=20)
     Biografia = models.TextField()
+    # Estructura de la carpeta para las imágenes
+    Imagen = models.ImageField(upload_to='images/autores/', null=True, blank=True)
     class Meta:
         db_table='Autores'
 
@@ -65,8 +67,14 @@ class Libro(models.Model):
     Titulo = models.TextField()
     Sinopsis = models.CharField(max_length=300)
     en_biblioteca = models.BooleanField(default=True)
+    # Estructura de la carpeta para las imágenes
+    Imagen = models.ImageField(upload_to='images/libros/', null=True, blank=True)
+    # Estructura de la carpeta para los archivos
+    Archivo = models.FileField(upload_to='files/libros/', null=True, blank=True)
+
     class Meta:
-        db_table='Libros'
+        db_table = 'Libros'
+        
 class Resena(models.Model):
     Id_Resena = models.AutoField(primary_key=True)
     Fk_Id_Libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
@@ -86,7 +94,6 @@ class Biblioteca(models.Model):
     class Meta:
         db_table = 'Biblioteca'
 
-
 class Libro_has_Autor(models.Model):
     Id_Libro_has_Autor = models.AutoField(primary_key=True)
     Fk_Id_Libro = models.ForeignKey(Libro, on_delete=models.CASCADE)
@@ -94,7 +101,6 @@ class Libro_has_Autor(models.Model):
 
     class Meta:
         db_table = 'Libro_has_Autor'
-
 
 class Libro_has_Idioma(models.Model):
     Id_Libro_has_Idioma = models.AutoField(primary_key=True)
